@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secondary Hypertension — Diagnosis & Treatment Reference</title>
+<style>
+:root {
+  --bg: #0b0f17;
+  --surface: #131a27;
+  --surface-2: #1a2333;
+  --surface-3: #232e42;
+  --border: #2a3549;
+  --text: #e8ecf4;
+  --text-muted: #8b96ab;
+  --accent: #fb7185;
+  --accent-2: #a78bfa;
+  --green: #34d399;
+  --amber: #fbbf24;
+  --red: #f87171;
+  --cyan: #22d3ee;
+  --blue: #60a5fa;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,.45);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.65; font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app { display: flex; min-height: 100vh; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 300px; flex-shrink: 0; background: var(--surface);
+  border-right: 1px solid var(--border); padding: 20px 0;
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  scrollbar-width: thin;
+}
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.sidebar h1 {
+  font-size: 15px; font-weight: 700; letter-spacing: .5px;
+  padding: 0 20px 16px; border-bottom: 1px solid var(--border);
+  color: var(--accent); text-transform: uppercase;
+}
+.sidebar h1 span {
+  display: block; font-size: 11px; color: var(--text-muted);
+  font-weight: 400; margin-top: 3px; letter-spacing: 0; text-transform: none;
+}
+.nav-group { padding: 12px 0 4px; }
+.nav-group-label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px;
+  color: var(--text-muted); padding: 8px 20px 4px; font-weight: 600;
+}
+.nav-link {
+  display: flex; align-items: center; gap: 10px; padding: 9px 20px;
+  font-size: 13.5px; color: var(--text-muted); text-decoration: none;
+  border-left: 3px solid transparent; transition: all .15s; cursor: pointer;
+}
+.nav-link:hover { background: var(--surface-2); color: var(--text); }
+.nav-link.active {
+  border-left-color: var(--accent); color: var(--accent);
+  background: rgba(251,113,133,.07); font-weight: 600;
+}
+.nav-link .icon { font-size: 15px; width: 20px; text-align: center; }
+
+/* ── Main ── */
+.main { flex: 1; min-width: 0; padding: 32px 40px 80px; max-width: 1180px; }
+.section { display: none; animation: fadeIn .25s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+h2 {
+  font-size: 24px; font-weight: 700; margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.subtitle { color: var(--text-muted); font-size: 13.5px; margin-bottom: 24px; }
+h3 { font-size: 17px; font-weight: 650; margin: 28px 0 10px; }
+h4 { font-size: 14.5px; font-weight: 600; margin: 18px 0 6px; color: var(--accent); }
+
+/* ── Cards ── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 22px; margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+
+/* ── Tip boxes ── */
+.tip-box {
+  border-radius: 12px; padding: 16px 18px; margin-bottom: 14px;
+  border-left: 4px solid; font-size: 13.5px;
+  background: var(--surface-2);
+}
+.tip-box.tip-cyan { border-color: var(--cyan); background: rgba(34,211,238,.06); }
+.tip-box.tip-amber { border-color: var(--amber); background: rgba(251,191,36,.06); }
+.tip-box.tip-red { border-color: var(--red); background: rgba(248,113,113,.06); }
+.tip-box.tip-green { border-color: var(--green); background: rgba(52,211,153,.06); }
+.tip-box.tip-purple { border-color: var(--accent-2); background: rgba(167,139,250,.06); }
+.tip-box.tip-blue { border-color: var(--blue); background: rgba(96,165,250,.06); }
+.tip-box-head {
+  font-size: 13.5px; font-weight: 700; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.tip-box.tip-cyan .tip-box-head { color: var(--cyan); }
+.tip-box.tip-amber .tip-box-head { color: var(--amber); }
+.tip-box.tip-red .tip-box-head { color: var(--red); }
+.tip-box.tip-green .tip-box-head { color: var(--green); }
+.tip-box.tip-purple .tip-box-head { color: var(--accent-2); }
+.tip-box.tip-blue .tip-box-head { color: var(--blue); }
+.tip-box ul { margin: 6px 0 0 0; padding-left: 20px; }
+.tip-box li { margin-bottom: 6px; }
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px; margin: 16px 0;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block; padding: 2px 9px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; letter-spacing: .3px;
+  vertical-align: middle; margin-left: 6px;
+}
+.badge-1 { background: rgba(52,211,153,.18); color: var(--green); }
+.badge-2a { background: rgba(56,189,248,.18); color: #38bdf8; }
+.badge-2b { background: rgba(251,191,36,.18); color: var(--amber); }
+.badge-cond { background: rgba(167,139,250,.18); color: var(--accent-2); }
+.badge-warn { background: rgba(248,113,113,.18); color: var(--red); }
+.badge-info { background: rgba(34,211,238,.18); color: var(--cyan); }
+.badge-bihs { background: rgba(96,165,250,.18); color: var(--blue); }
+
+/* ── Tables ── */
+.tbl-wrap { overflow-x: auto; margin: 12px 0; border-radius: 10px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th {
+  background: var(--surface-2); text-align: left; padding: 10px 14px;
+  font-weight: 650; font-size: 11.5px; text-transform: uppercase;
+  letter-spacing: .6px; color: var(--text-muted);
+  border-bottom: 1px solid var(--border); white-space: nowrap;
+}
+tbody td { padding: 9px 14px; border-bottom: 1px solid rgba(42,53,73,.6); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(251,113,133,.04); }
+
+/* ── Alerts ── */
+.alert { border-radius: 10px; padding: 14px 18px; margin: 14px 0; font-size: 13.5px; border-left: 4px solid; }
+.alert-info { background: rgba(34,211,238,.08); border-color: var(--cyan); }
+.alert-warn { background: rgba(251,191,36,.08); border-color: var(--amber); }
+.alert-danger { background: rgba(248,113,113,.08); border-color: var(--red); }
+.alert-success { background: rgba(52,211,153,.08); border-color: var(--green); }
+.alert-bihs { background: rgba(96,165,250,.08); border-color: var(--blue); }
+
+/* ── Tabs ── */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin: 18px 0 16px; overflow-x: auto; }
+.tab {
+  padding: 9px 16px; font-size: 13px; font-weight: 550; cursor: pointer;
+  color: var(--text-muted); border: none; border-bottom: 2px solid transparent;
+  transition: all .15s; white-space: nowrap; background: none;
+}
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn .2s; }
+
+/* ── Calculator ── */
+.calc {
+  background: linear-gradient(135deg, rgba(251,113,133,.06), rgba(167,139,250,.06));
+  border: 1px solid rgba(251,113,133,.28); border-radius: var(--radius);
+  padding: 22px; margin: 18px 0;
+}
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-bottom: 14px; }
+.field label {
+  display: block; font-size: 11.5px; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--text-muted); font-weight: 600; margin-bottom: 5px;
+}
+.field input, .field select {
+  width: 100%; padding: 10px 12px; background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px; font-size: 14px;
+  font-family: inherit; transition: border-color .15s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+.btn {
+  padding: 10px 22px; border-radius: 8px; border: none; cursor: pointer;
+  font-size: 13.5px; font-weight: 650; font-family: inherit;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0b0f17; transition: transform .12s, opacity .12s;
+}
+.btn:hover { transform: translateY(-1px); opacity: .92; }
+.btn-ghost {
+  background: transparent; color: var(--text-muted);
+  border: 1px solid var(--border); margin-left: 8px;
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--text-muted); }
+.btn-sm {
+  padding: 6px 14px; font-size: 12px; margin-right: 6px;
+}
+
+.result { margin-top: 16px; border-radius: 10px; padding: 16px 18px; display: none; }
+.result.show { display: block; animation: fadeIn .25s; }
+.result.positive { background: rgba(248,113,113,.1); border: 1px solid rgba(248,113,113,.4); }
+.result.negative { background: rgba(52,211,153,.1); border: 1px solid rgba(52,211,153,.4); }
+.result.indeterminate { background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.4); }
+.result-head { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.result.positive .result-head { color: var(--red); }
+.result.negative .result-head { color: var(--green); }
+.result.indeterminate .result-head { color: var(--amber); }
+.metric-row {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 7px 0; border-bottom: 1px solid rgba(42,53,73,.5);
+  font-size: 13px; flex-wrap: wrap;
+}
+.metric-row:last-child { border-bottom: none; }
+.metric-row .k { color: var(--text-muted); }
+.metric-row .v { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ── Misc ── */
+.hl { color: var(--accent); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+.hl-amber { color: var(--amber); font-weight: 600; }
+.hl-red { color: var(--red); font-weight: 600; }
+.hl-cyan { color: var(--cyan); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+
+ul, ol { padding-left: 20px; margin: 8px 0; }
+li { margin-bottom: 5px; }
+
+.src-note {
+  font-size: 11.5px; color: var(--text-muted); font-style: italic;
+  border-left: 2px solid var(--border); padding-left: 10px; margin-top: 10px;
+}
+.ref-list { font-size: 12.5px; color: var(--text-muted); }
+.ref-list li { margin-bottom: 9px; }
+
+.flow { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+.flow-step {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 14px 16px; background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.flow-arrow { text-align: center; color: var(--accent); font-size: 16px; padding: 4px 0; }
+.flow-num {
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0b0f17; font-weight: 700; font-size: 12.5px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Checklist ── */
+.checklist { list-style: none; padding-left: 0; }
+.checklist li {
+  padding: 8px 12px; border-radius: 8px; margin-bottom: 6px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  font-size: 13px; display: flex; gap: 10px; align-items: flex-start;
+}
+.checklist li::before {
+  content: "☐"; color: var(--accent); font-weight: 700; flex-shrink: 0;
+}
+
+/* ── Converter result grid ── */
+.conv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px; margin-top: 12px;
+}
+.conv-cell {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+}
+.conv-cell .label {
+  font-size: 11px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: .5px;
+  margin-bottom: 4px; font-weight: 600;
+}
+.conv-cell .value {
+  font-size: 15px; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .main { padding: 20px 18px 60px; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<nav class="sidebar">
+<h1>Secondary Hypertension <span>Diagnosis & Treatment Reference</span></h1>
+
+<div class="nav-group">
+<div class="nav-group-label">Foundation</div>
+<a class="nav-link active" data-section="overview"><span class="icon">📋</span> Overview</a>
+<a class="nav-link" data-section="screening"><span class="icon">🔍</span> Who to Screen</a>
+</div>
+
+<div class="nav-group">
+<div class="nav-group-label">Primary Aldosteronism</div>
+<a class="nav-link" data-section="biochemistry"><span class="icon">🧪</span> Biochemical Screening</a>
+<a class="nav-link" data-section="sampling-tips"><span class="icon">📌</span> Sampling Tips &amp; Checklist</a>
+<a class="nav-link" data-section="unit-converter"><span class="icon">🌍</span> Unit Converter (SI ↔ US)</a>
+<a class="nav-link" data-section="arr-calc"><span class="icon">🧮</span> ARR Calculator</a>
+<a class="nav-link" data-section="confirmatory"><span class="icon">✅</span> Confirmatory Testing</a>
+<a class="nav-link" data-section="subtyping"><span class="icon">🎯</span> CT &amp; Adrenal Vein Sampling</a>
+<a class="nav-link" data-section="avs-calc"><span class="icon">📐</span> AVS Index Calculator</a>
+<a class="nav-link" data-section="treatment"><span class="icon">💊</span> PA Treatment</a>
+</div>
+
+<div class="nav-group">
+<div class="nav-group-label">Other Secondary Causes</div>
+<a class="nav-link" data-section="other"><span class="icon">🌐</span> Full Workup Guide</a>
+<a class="nav-link" data-section="pheo"><span class="icon">⚡</span> Pheochromocytoma</a>
+<a class="nav-link" data-section="cushing"><span class="icon">🌙</span> Cushing Syndrome</a>
+<a class="nav-link" data-section="reno"><span class="icon">🩸</span> Renovascular Disease</a>
+<a class="nav-link" data-section="thyroid-osa"><span class="icon">🦋</span> Thyroid &amp; OSA</a>
+<a class="nav-link" data-section="rare"><span class="icon">🧬</span> Rare Causes</a>
+</div>
+
+<div class="nav-group">
+<div class="nav-group-label">Context</div>
+<a class="nav-link" data-section="comparison"><span class="icon">⚖️</span> Guideline Comparison</a>
+<a class="nav-link" data-section="references"><span class="icon">📚</span> References</a>
+</div>
+</nav>
+
+<!-- ══════════ MAIN ══════════ -->
+<main class="main">
+
+<!-- ══════ OVERVIEW ══════ -->
+<section class="section active" id="overview">
+<h2>Secondary Hypertension</h2>
+<p class="subtitle">A practical, integrated reference for the diagnosis and treatment of primary aldosteronism and other secondary causes of hypertension — combining AHA/ACC 2025, Endocrine Society 2025, BIHS 2023/2024, and JAMA IM 2026 guidance.</p>
+
+<div class="alert alert-warn">
+<strong>⚠️ Educational reference only.</strong> This tool summarizes published guidelines for clinician reference. It is not a substitute for clinical judgment, institutional protocol, or the full guideline documents. Assay-specific cutoffs must be verified against your local laboratory.
+</div>
+
+<div class="card-grid">
+<div class="card">
+<h4>Why it matters</h4>
+<p style="font-size:13px;color:var(--text-muted);">Secondary causes are present in <strong>~5–25% of adults with hypertension</strong>. Primary aldosteronism is the <strong>most common identifiable cause</strong> — and it is potentially curable (unilateral disease) or specifically targetable (bilateral disease with MRAs).</p>
+</div>
+<div class="card">
+<h4>The four key sources</h4>
+<p style="font-size:13px;color:var(--text-muted);"><strong>AHA/ACC 2025</strong> — targeted case detection with Class 1 indications.<br><strong>Endocrine Society 2025</strong> — universal ARR screening position.<br><strong>BIHS 2023/2024</strong> — UK practical approach addressing local variation.<br><strong>JAMA IM 2026</strong> — critical review questioning ARR and suppression testing reliance.</p>
+</div>
+<div class="card">
+<h4>The core triad (PA)</h4>
+<p style="font-size:13px;color:var(--text-muted);">Diagnosis rests on demonstrating <strong>suppressed renin</strong> + <strong>inappropriately elevated aldosterone</strong> + an <strong>elevated ARR</strong> — then confirming, then lateralizing.</p>
+</div>
+<div class="card">
+<h4>🌍 International note</h4>
+<p style="font-size:13px;color:var(--text-muted);">Aldosterone and renin are reported in <strong>different units around the world</strong> — ng/dL vs pmol/L, PRA vs DRC, per hour vs per second. <strong>The ARR cutoff only makes sense in the units it was derived in.</strong> Use the <span class="hl-blue">Unit Converter</span> section to translate any result into any system.</p>
+</div>
+</div>
+
+<h3>The Full PA Pathway at a Glance</h3>
+<div class="flow">
+<div class="flow-step"><div class="flow-num">1</div><div>
+<strong>Case detection</strong> — apply screening criteria (Class 1 indications per AHA/ACC; universal per Endocrine Society; pragmatic per BIHS).
+</div></div>
+<div class="flow-arrow">▼</div>
+<div class="flow-step"><div class="flow-num">2</div><div>
+<strong>Biochemical screening</strong> — morning, seated, liberal sodium, potassium normalized. Measure PAC + PRA (or DRC) → calculate ARR.
+</div></div>
+<div class="flow-arrow">▼</div>
+<div class="flow-step"><div class="flow-num">3</div><div>
+<strong>Confirmatory testing</strong> — aldosterone suppression: IV saline suppression test (SIT), oral salt loading, captopril challenge, or fludrocortisone suppression. <em>Role now debated.</em>
+</div></div>
+<div class="flow-arrow">▼</div>
+<div class="flow-step"><div class="flow-num">4</div><div>
+<strong>Subtyping</strong> — adrenal CT <em>plus</em> adrenal venous sampling (AVS) to distinguish unilateral from bilateral disease.
+</div></div>
+<div class="flow-arrow">▼</div>
+<div class="flow-step"><div class="flow-num">5</div><div>
+<strong>Treatment</strong> — unilateral → laparoscopic adrenalectomy; bilateral or nonsurgical → mineralocorticoid receptor antagonist.
+</div></div>
+</div>
+
+<div class="alert alert-bihs">
+<strong>🇬🇧 BIHS perspective:</strong> There is a <span class="hl-blue">continuum between low-renin essential hypertension and PA</span>. The classic Conn syndrome (hypertension + hypokalemia + alkalosis) is found in only ~1/3 of cases — <strong>adenoma with normokalemia is the most common presentation</strong>. PA is also an independent cardiovascular risk factor (stroke, CAD, AF, heart failure, diabetes, metabolic syndrome).
+</div>
+</section>
+
+<!-- ══════ WHO TO SCREEN ══════ -->
+<section class="section" id="screening">
+<h2>Who to Screen</h2>
+<p class="subtitle">AHA/ACC 2025 Class 1 and Class 2b indications, the Endocrine Society's broader position, and the BIHS pragmatic approach.</p>
+
+<h3>AHA/ACC 2025 — Screen These Adults <span class="badge badge-1">Class 1</span></h3>
+<div class="card">
+<p style="font-size:13.5px;margin-bottom:10px;">Screen adults with hypertension if <strong>any</strong> of the following are present:</p>
+<ul style="font-size:13.5px;">
+<li><strong>Resistant hypertension</strong> — regardless of whether hypokalemia is present</li>
+<li><strong>Hypokalemia</strong> — spontaneous <em>or</em> diuretic-induced</li>
+<li><strong>Obstructive sleep apnea</strong></li>
+<li><strong>Incidentally discovered adrenal mass</strong></li>
+<li><strong>Family history of early-onset hypertension</strong></li>
+<li><strong>Stroke at a young age</strong> (&lt;40 years)</li>
+</ul>
+<p style="font-size:13.5px;margin-top:10px;"><strong>May also consider</strong> <span class="badge badge-2b">Class 2b</span> in adults with <strong>stage 2 hypertension</strong>.</p>
+</div>
+
+<h3>General Suspicion Triggers for Any Secondary Cause</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Stage 2 hypertension</strong></li>
+<li><strong>Treatment-resistant hypertension</strong></li>
+<li><strong>Sudden-onset hypertension</strong></li>
+<li><strong>Loss of previously good control</strong></li>
+<li><strong>Early-onset hypertension</strong></li>
+</ul>
+<p style="font-size:13.5px;margin-top:8px;"><span class="hl-red">A careful medication/substance history is essential</span> — prescription, OTC, herbal, and illicit agents can all raise BP.</p>
+</div>
+
+<h3>Endocrine Society 2025 — The Broader Position <span class="badge badge-cond">Conditional</span></h3>
+<div class="alert alert-info">
+The updated Endocrine Society Clinical Practice Guideline goes further than AHA/ACC, <strong>suggesting screening all individuals with hypertension</strong> — a move toward <span class="hl">universal case detection</span>. This reflects evidence that PA is far more prevalent than previously recognized and that hypokalemia is absent in the majority of cases.
+</div>
+
+<h3>BIHS 2023/2024 — The UK Pragmatic View <span class="badge badge-bihs">Consensus</span></h3>
+<div class="alert alert-bihs">
+The BIHS document acknowledges that <strong>UK National guidelines do not provide extensive PA recommendations</strong>, and local practice varies. Its aim is to raise awareness, guide screening/diagnosis, and support treatment to mitigate adverse cardiometabolic effects in otherwise undiagnosed individuals. The BIHS emphasizes that PA remains <strong>often unrecognized</strong>, particularly in resistant hypertension.
+</div>
+
+<h3>Why the Guidelines Disagree</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th></th><th>AHA/ACC 2025</th><th>Endocrine Society 2025</th><th>BIHS 2023/24</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>Screening population</strong></td>
+<td>Targeted — high-risk features only (Class 1), stage 2 HTN (Class 2b)</td>
+<td>All individuals with hypertension (conditional)</td>
+<td>Pragmatic — raise awareness, standardize local variation</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Resource-conscious case detection; highest yield first</td>
+<td>Hypokalemia absent in most PA; targeted screening misses cases</td>
+<td>Continuum between low-renin essential HTN and PA; classic Conn only ~1/3</td>
+</tr>
+<tr>
+<td><strong>Practical implication</strong></td>
+<td>Fewer tests, higher pre-test probability</td>
+<td>More tests, earlier detection, higher false-positive burden</td>
+<td>Standardize UK practice; reduce unrecognized cases</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="alert alert-success">
+<strong>💡 Practical reconciliation:</strong> In settings where ARR testing is readily available, the Endocrine Society's broader approach is defensible. In resource-constrained settings, the AHA/ACC Class 1 list captures the highest-yield population — resistant hypertension, hypokalemia, adrenal incidentaloma, and young stroke remain the strongest triggers.
+</div>
+</section>
+
+<!-- ══════ BIOCHEMICAL SCREENING ══════ -->
+<section class="section" id="biochemistry">
+<h2>Biochemical Screening</h2>
+<p class="subtitle">How to screen — the ARR, assay-specific thresholds, pre-test optimization, and medication management.</p>
+
+<h3>The Core Principle <span class="badge badge-1">Class 1</span></h3>
+<div class="alert alert-info">
+Use <strong>plasma aldosterone concentration (PAC), plasma renin activity (PRA), and the aldosterone-to-renin ratio (ARR) together</strong>. This combined interpretation is currently the most accurate and reliable screening method. <span class="hl-red">The ARR alone should not be used</span> — it compounds the measurement error of both assays.
+</div>
+
+<h3>📌 Sampling Tips — At a Glance</h3>
+<div class="tip-grid">
+<div class="tip-box tip-cyan">
+<div class="tip-box-head">⏰ Timing &amp; Posture</div>
+<ul>
+<li><strong>Morning draw</strong> — ideally 8–10 AM</li>
+<li><strong>Seated 5–15 min</strong> before venipuncture</li>
+<li>Avoid prolonged recumbency before sampling</li>
+<li>Same posture for both aldosterone and renin</li>
+</ul>
+</div>
+<div class="tip-box tip-amber">
+<div class="tip-box-head">🧂 Sodium &amp; Potassium</div>
+<ul>
+<li><strong>Do NOT restrict sodium</strong> — liberal intake for at least 3 days</li>
+<li><strong>Normalize potassium</strong> first if hypokalemic</li>
+<li>Measure potassium <em>with</em> the sample</li>
+<li>Low K⁺ falsely lowers aldosterone → false negative</li>
+</ul>
+</div>
+<div class="tip-box tip-red">
+<div class="tip-box-head">💊 Drugs to HOLD</div>
+<ul>
+<li><strong>MRAs</strong> — spironolactone 4–6 wk; eplerenone 2–4 wk</li>
+<li><strong>Beta-blockers</strong> — suppress renin; hold 2 wk if feasible</li>
+<li><strong>Central alpha-agonists</strong> — clonidine, methyldopa</li>
+<li><strong>NSAIDs</strong> — can raise K⁺ and affect renin</li>
+<li><strong>Licorice, carbenoxolone</strong> — mineralocorticoid effect</li>
+</ul>
+</div>
+<div class="tip-box tip-green">
+<div class="tip-box-head">✅ Drugs to CONTINUE</div>
+<ul>
+<li><strong>ACE inhibitors / ARBs</strong> — continue (per AHA/ACC)</li>
+<li><strong>Calcium channel blockers</strong> — continue</li>
+<li><strong>Thiazide / loop diuretics</strong> — continue if needed for BP</li>
+<li>Do not delay screening for medication logistics alone</li>
+</ul>
+</div>
+<div class="tip-box tip-purple">
+<div class="tip-box-head">🧊 Sample Handling</div>
+<ul>
+<li>Collect in <strong>EDTA or heparin</strong> tube (per lab protocol)</li>
+<li><strong>Ice</strong> the renin sample immediately</li>
+<li><strong>Centrifuge cold</strong> and separate plasma promptly</li>
+<li>Follow your local lab's pre-analytical requirements</li>
+</ul>
+</div>
+<div class="tip-box tip-blue">
+<div class="tip-box-head">🔁 If Result is Borderline</div>
+<ul>
+<li>Correct potassium and repeat</li>
+<li>Substitute interfering drugs for <strong>2–4 weeks</strong></li>
+<li>Use non-interfering agents (verapamil, diltiazem, doxazosin, hydralazine)</li>
+<li>Repeat morning, seated, liberal sodium</li>
+</ul>
+</div>
+</div>
+
+<h3>Thresholds — AHA/ACC vs Endocrine Society</h3>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr><th>Parameter</th><th>AHA/ACC 2025</th><th>Endocrine Society 2025</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Suppressed renin</strong></td>
+<td>PRA &lt;1 ng/mL/h</td>
+<td>PRA ≤1 ng/mL/h <em>or</em> DRC ≤8.2 mU/L</td>
+</tr>
+<tr>
+<td><strong>Aldosterone — immunoassay</strong></td>
+<td>PAC ≥10 ng/dL</td>
+<td>PAC ≥10 ng/dL (≥277 pmol/L)</td>
+</tr>
+<tr>
+<td><strong>Aldosterone — LC-MS/MS</strong></td>
+<td>Not separately specified</td>
+<td>PAC ≥7.5 ng/dL (≥208 pmol/L)</td>
+</tr>
+<tr>
+<td><strong>ARR cutoff — immunoassay</strong></td>
+<td>Most commonly 30; thresholds of 20 or 40 supported</td>
+<td>&gt;20 (ng/dL : ng/mL/h) <em>or</em> &gt;70 (pmol/L : mU/L)</td>
+</tr>
+<tr>
+<td><strong>ARR cutoff — LC-MS/MS</strong></td>
+<td>Not specified</td>
+<td>~25% lower than immunoassay cutoffs</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="alert alert-warn">
+<strong>⚠️ Assay-specificity is critical.</strong> Immunoassays and LC-MS/MS give different aldosterone values, and PRA and DRC are different analytes measured in different units. <strong>Never mix a cutoff from one assay with a result from another.</strong> Verify cutoffs against your own laboratory's method.
+</div>
+
+<h3>Pre-Test Conditions — Optimize or Risk a False Result</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Condition</th><th>Requirement</th><th>Why</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>Potassium</strong></td>
+<td>Normalize serum potassium before testing</td>
+<td>Hypokalemia <strong>falsely lowers aldosterone</strong> → false negative. Correct and repeat if hypokalemic and screen is negative.</td>
+</tr>
+<tr>
+<td><strong>Sodium intake</strong></td>
+<td>Unrestricted / liberal salt intake</td>
+<td>Sodium restriction raises renin and aldosterone, obscuring the pattern</td>
+</tr>
+<tr>
+<td><strong>Timing &amp; posture</strong></td>
+<td>Morning draw, seated</td>
+<td>Aldosterone and renin follow circadian and postural variation</td>
+</tr>
+<tr>
+<td><strong>Potassium measurement</strong></td>
+<td>Measure alongside aldosterone</td>
+<td>Needed to interpret aldosterone correctly and detect the false-negative scenario</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Medication Management</h3>
+<div class="card">
+<h4>✅ Continue most antihypertensives</h4>
+<p style="font-size:13.5px;">The AHA/ACC guideline advises continuing most antihypertensives during initial screening to <strong>minimize barriers to testing</strong> — including ACE inhibitors, ARBs, and CCBs. Do not let medication logistics prevent screening.</p>
+<h4 style="color:var(--amber);">⚠️ Beta-blockers and central alpha-agonists</h4>
+<p style="font-size:13.5px;">These suppress renin and may cause <strong>false positives</strong>, but results remain interpretable in most cases. Hold for 2 weeks if clinically safe and if the result would change management.</p>
+<h4 style="color:var(--red);">✘ The exception: MRAs</h4>
+<p style="font-size:13.5px;">Mineralocorticoid receptor antagonists should ideally be <strong>withdrawn for at least 4 weeks</strong> before testing. They directly block the receptor, raise renin, and lower aldosterone — reliably producing a false negative.</p>
+<h4>🔄 If results are negative or borderline with high suspicion</h4>
+<p style="font-size:13.5px;">Substitute interfering agents with non-interfering agents for <strong>2–4 weeks</strong> and repeat testing:</p>
+</div>
+
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Interfering (withdraw / substitute)</th><th>Non-interfering (preferred during testing)</th></tr></thead>
+<tbody>
+<tr>
+<td>
+Beta-blockers<br>
+Central alpha-agonists (clonidine, methyldopa)<br>
+ACE inhibitors / ARBs<br>
+Diuretics
+</td>
+<td>
+Nondihydropyridine calcium channel blockers (verapamil, diltiazem)<br>
+Vasodilators (hydralazine)<br>
+Peripheral alpha-blockers (doxazosin, prazosin, terazosin)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="alert alert-info">
+<strong>🔑 Key insight from the JAMA review:</strong> <span class="hl-cyan">Suppressed renin despite RAAS inhibitors or diuretics is itself strongly suggestive of PA.</span> If renin remains suppressed while the patient is on agents that should raise it, that finding carries diagnostic weight independent of the ARR.
+</div>
+</section>
+
+<!-- ══════ SAMPLING TIPS SECTION ══════ -->
+<section class="section" id="sampling-tips">
+<h2>Sampling Tips &amp; Pre-Test Checklist</h2>
+<p class="subtitle">A practical, step-by-step guide to getting the aldosterone and renin sample right the first time — where most diagnostic errors originate.</p>
+
+<div class="alert alert-info">
+<strong>💡 Why this matters:</strong> The ARR is exquisitely sensitive to pre-analytical conditions. A sample drawn in the wrong posture, at the wrong time, with the wrong potassium, or on the wrong medications can produce a completely misleading result — often a false negative that delays diagnosis for years.
+</div>
+
+<h3>1. Timing &amp; Posture — Get This Right First</h3>
+<div class="tip-grid">
+<div class="tip-box tip-cyan">
+<div class="tip-box-head">⏰ Timing</div>
+<ul>
+<li><strong>Morning draw</strong> — ideally between <strong>8:00 and 10:00 AM</strong></li>
+<li>Aldosterone and renin both follow a circadian rhythm, peaking in the early morning</li>
+<li>Avoid late-afternoon draws — aldosterone may be physiologically lower</li>
+<li>Ensure the patient has been <strong>up and about</strong> (not recumbent overnight) before the draw</li>
+</ul>
+</div>
+<div class="tip-box tip-cyan">
+<div class="tip-box-head">🪑 Posture</div>
+<ul>
+<li><strong>Seated for 5–15 minutes</strong> before venipuncture</li>
+<li>Same posture for both aldosterone and renin sampling</li>
+<li>Avoid prolonged recumbency — it suppresses renin and raises the apparent ARR</li>
+<li>Ambulation before the draw is acceptable and preferred over lying down</li>
+</ul>
+</div>
+</div>
+
+<h3>2. Potassium — The Most Common False-Negative Cause</h3>
+<div class="tip-box tip-amber">
+<div class="tip-box-head">🧂 Potassium rules</div>
+<ul>
+<li><strong>Correct hypokalemia before testing.</strong> Hypokalemia <em>falsely lowers</em> aldosterone — a hypokalemic patient with PA can look biochemically normal.</li>
+<li><strong>Measure potassium alongside aldosterone</strong> — the two must be interpreted together.</li>
+<li>If the screen is <strong>negative in a hypokalemic patient</strong>, correct potassium and <strong>repeat the test</strong> before excluding PA.</li>
+<li>Potassium supplements and potassium-sparing diuretics (amiloride, triamterene) can be used to normalize K⁺ while awaiting testing — they do not invalidate the ARR.</li>
+</ul>
+</div>
+
+<h3>3. Sodium Intake — Do Not Restrict</h3>
+<div class="tip-box tip-amber">
+<div class="tip-box-head">🧂 Sodium rules</div>
+<ul>
+<li><strong>Unrestricted, liberal salt intake</strong> for at least 3 days before testing.</li>
+<li>Sodium restriction <em>raises</em> renin and aldosterone — obscuring the suppressed-renin pattern of PA.</li>
+<li>No need to formally sodium-load for the initial screen — just don't restrict.</li>
+<li>A 24-hour urinary sodium can confirm adequate intake if the result is ambiguous.</li>
+</ul>
+</div>
+
+<h3>4. Drug Holds — The Practical Cheat Sheet</h3>
+
+<div class="tip-box tip-red">
+<div class="tip-box-head">🛑 HOLD before testing (when clinically safe)</div>
+<ul>
+<li><strong>Mineralocorticoid receptor antagonists</strong> — the most important hold.
+  <ul>
+    <li>Spironolactone: <strong>4–6 weeks</strong> (long half-life, active metabolites)</li>
+    <li>Eplerenone: <strong>2–4 weeks</strong></li>
+  </ul>
+</li>
+<li><strong>Beta-blockers</strong> — suppress renin → false positives. Hold <strong>2 weeks</strong> if BP allows.</li>
+<li><strong>Central alpha-agonists</strong> — clonidine, methyldopa. Suppress renin. Hold 2 weeks if safe; clonidine rebound is a risk — taper.</li>
+<li><strong>NSAIDs</strong> — can raise potassium and blunt renin. Hold 1–2 weeks if possible.</li>
+<li><strong>Licorice, carbenoxolone, chewing tobacco</strong> — mineralocorticoid-like effect. Stop 2 weeks before.</li>
+<li><strong>Potassium-wasting diuretics</strong> — hold 2 weeks if BP allows, but they can be continued if needed for BP control; interpret renin cautiously.</li>
+</ul>
+</div>
+
+<div class="tip-box tip-green">
+<div class="tip-box-head">✅ CONTINUE during testing (per AHA/ACC 2025)</div>
+<ul>
+<li><strong>ACE inhibitors / ARBs</strong> — continue. They may raise renin, but the AHA/ACC advises continuing to minimize barriers. A suppressed renin on an ACEi/ARB is <em>strongly</em> suggestive of PA.</li>
+<li><strong>Calcium channel blockers</strong> — continue. Non-dihydropyridine (verapamil, diltiazem) are preferred if a substitution is needed.</li>
+<li><strong>Thiazide / loop diuretics</strong> — may be continued if needed for BP, but interpret with caution.</li>
+<li><strong>Alpha-blockers</strong> (doxazosin, prazosin, terazosin) — safe, non-interfering, useful substitutes.</li>
+<li><strong>Hydralazine</strong> — safe, non-interfering.</li>
+</ul>
+</div>
+
+<div class="tip-box tip-purple">
+<div class="tip-box-head">🔄 If a hold is not safe — substitute instead</div>
+<ul>
+<li>Replace interfering agents with <strong>non-interfering agents for 2–4 weeks</strong>, then repeat the ARR.</li>
+<li>Preferred substitutions: <strong>verapamil</strong> or <strong>diltiazem</strong> (non-DHP CCBs), <strong>doxazosin</strong> (alpha-blocker), <strong>hydralazine</strong> (vasodilator).</li>
+<li>Avoid substituting with agents that themselves interfere (beta-blockers, central alpha-agonists, MRAs).</li>
+</ul>
+</div>
+
+<h3>5. Sample Collection &amp; Handling</h3>
+<div class="tip-grid">
+<div class="tip-box tip-blue">
+<div class="tip-box-head">🧪 Tube &amp; handling</div>
+<ul>
+<li>Collect in <strong>EDTA or heparin</strong> tube — follow your local lab's validated protocol.</li>
+<li><strong>Renin sample on ice</strong> — place the tube in an ice slurry immediately after draw.</li>
+<li><strong>Centrifuge cold</strong> (4°C) and separate plasma promptly.</li>
+<li>Freeze plasma at −20°C or below if not assayed immediately.</li>
+<li>Aldosterone is more stable than renin — but follow local pre-analytical requirements for both.</li>
+</ul>
+</div>
+<div class="tip-box tip-blue">
+<div class="tip-box-head">🧊 Common handling mistakes</div>
+<ul>
+<li>Renin sample left at room temperature → falsely low PRA</li>
+<li>Delayed centrifugation → cryoactivation of prorenin → falsely high PRA</li>
+<li>Hemolyzed sample → unreliable potassium and possibly aldosterone</li>
+<li>Wrong tube type (e.g., serum separator for renin) → invalid result</li>
+</ul>
+</div>
+</div>
+
+<h3>6. The Pre-Test Checklist — Print This</h3>
+<div class="card">
+<ul class="checklist">
+<li><strong>Patient off MRAs</strong> for ≥4 weeks (spironolactone) or ≥2 weeks (eplerenone), unless unsafe</li>
+<li><strong>Potassium normal</strong> — corrected if hypokalemic, and measured with the sample</li>
+<li><strong>Sodium intake liberal</strong> — not restricted for at least 3 days</li>
+<li><strong>Beta-blockers / central alpha-agonists</strong> held for 2 weeks if clinically safe</li>
+<li><strong>NSAIDs, licorice, carbenoxolone</strong> stopped for 1–2 weeks</li>
+<li><strong>Morning draw</strong> — 8:00–10:00 AM, patient ambulatory beforehand</li>
+<li><strong>Seated 5–15 minutes</strong> before venipuncture, same posture for both assays</li>
+<li><strong>Renin sample on ice</strong>, centrifuged cold, plasma separated promptly</li>
+<li><strong>Both aldosterone and renin</strong> sent to the lab with the correct tube types</li>
+<li><strong>Local lab cutoffs confirmed</strong> — assay type (immunoassay vs LC-MS/MS) and units known</li>
+<li><strong>If result borderline or negative with high suspicion</strong> — plan a repeat after drug substitution or potassium correction</li>
+</ul>
+</div>
+
+<h3>7. Common Pitfalls — Why Screens Fail</h3>
+<div class="tip-box tip-red">
+<div class="tip-box-head">⚠️ Top false-negative causes</div>
+<ul>
+<li><strong>Hypokalemia at sampling</strong> → falsely low aldosterone</li>
+<li><strong>MRAs not held</strong> → receptor blocked, renin raised, aldosterone lowered</li>
+<li><strong>Sodium restriction</strong> → renin and aldosterone both raised, ARR misleading</li>
+<li><strong>Afternoon or recumbent draw</strong> → non-diagnostic aldosterone and renin</li>
+<li><strong>Wrong assay interpretation</strong> → using an immunoassay cutoff on an LC-MS/MS result</li>
+<li><strong>Renin sample mishandled</strong> → falsely low PRA → falsely high ARR</li>
+</ul>
+</div>
+<div class="tip-box tip-red">
+<div class="tip-box-head">⚠️ Top false-positive causes</div>
+<ul>
+<li><strong>Beta-blockers or central alpha-agonists</strong> → renin suppressed in a patient without PA</li>
+<li><strong>Advanced age or CKD</strong> → low renin is common, lowering ARR specificity</li>
+<li><strong>High aldosterone from another cause</strong> (e.g., heart failure, cirrhosis) → elevated ARR without PA</li>
+<li><strong>Renin cryoactivation</strong> → falsely high PRA (uncommon with proper handling)</li>
+</ul>
+</div>
+
+<div class="alert alert-success">
+<strong>💡 The bottom line:</strong> A correctly collected sample — morning, seated, liberal sodium, normal potassium, MRAs held — is worth more than any sophisticated assay. When in doubt, correct the pre-analytical conditions and repeat before excluding PA.
+</div>
+</section>
+
+<!-- ══════ UNIT CONVERTER SECTION (NEW) ══════ -->
+<section class="section" id="unit-converter">
+<h2>🌍 Unit Converter — SI ↔ US &amp; Time Units</h2>
+<p class="subtitle">Translate aldosterone and renin values between international reporting systems. Because the ARR is a <em>ratio</em>, its value changes with units — this tool lets you see the same physiology in every system.</p>
+
+<div class="alert alert-danger">
+<strong>🚨 The #1 international interpretation error:</strong> Applying a US ARR cutoff (e.g., >30) to a result reported in SI units (pmol/L : mU/L). The <strong>same patient</strong> can have an ARR of 30 in US units and 70+ in SI units — or vice versa — depending on the unit combination. <strong>Always convert first, then apply the cutoff that matches the unit system.</strong>
+</div>
+
+<!-- The Big Warning Card -->
+<div class="card" style="border-left:4px solid var(--amber);">
+<h4>⚠️ The ARR is unit-dependent — but the physiology is not</h4>
+<p style="font-size:13.5px;margin-bottom:10px;">The aldosterone-to-renin ratio is a <strong>ratio of two measured concentrations</strong>. When the units of either (or both) change, the numeric ARR changes — even though the patient's actual aldosterone and renin biology has not.</p>
+<p style="font-size:13.5px;margin-bottom:10px;">The <strong>same patient</strong> can show:</p>
+<div class="conv-grid">
+<div class="conv-cell">
+<div class="label">US units (ng/dL : ng/mL/h)</div>
+<div class="value" style="color:var(--cyan);">ARR = 30</div>
+</div>
+<div class="conv-cell">
+<div class="label">SI units (pmol/L : mU/L)</div>
+<div class="value" style="color:var(--accent-2);">ARR = 70</div>
+</div>
+<div class="conv-cell">
+<div class="label">Canada (pmol/L : ng/L/s)</div>
+<div class="value" style="color:var(--amber);">ARR ≈ 2500</div>
+</div>
+<div class="conv-cell">
+<div class="label">Australia (pmol/L : pmol/L/min)</div>
+<div class="value" style="color:var(--green);">varies by lab</div>
+</div>
+</div>
+<p style="font-size:13px;color:var(--text-muted);margin-top:12px;"><strong>All four represent the same physiology.</strong> Only the unit system differs. Use the converter below to see any value in every system.</p>
+</div>
+
+<!-- THE CONVERTER -->
+<h3>🔧 Aldosterone &amp; Renin Converter</h3>
+<div class="calc">
+<div class="calc-grid">
+<div class="field">
+<label for="convAldoVal">Aldosterone value</label>
+<input type="number" id="convAldoVal" step="0.1" placeholder="e.g. 15" oninput="convertAll()">
+</div>
+<div class="field">
+<label for="convAldoUnit">Aldosterone unit (input)</label>
+<select id="convAldoUnit" onchange="convertAll()">
+<option value="ng_dL">ng/dL (US)</option>
+<option value="pmol_L">pmol/L (SI, Canada, UK, EU, AU)</option>
+<option value="ng_L">ng/L (= pg/mL)</option>
+<option value="pg_mL">pg/mL (= ng/L)</option>
+</select>
+</div>
+<div class="field">
+<label for="convRenVal">Renin value</label>
+<input type="number" id="convRenVal" step="0.01" placeholder="e.g. 0.5" oninput="convertAll()">
+</div>
+<div class="field">
+<label for="convRenUnit">Renin unit (input)</label>
+<select id="convRenUnit" onchange="convertAll()">
+<option value="pra_hr">PRA ng/mL/h (US)</option>
+<option value="pra_s">PRA ng/mL/s (SI, Canada)</option>
+<option value="pra_Lmin">PRA ng/L/min</option>
+<option value="pra_Ls">PRA ng/L/s</option>
+<option value="drc_mU">DRC mU/L (UK, EU)</option>
+<option value="drc_ngL">DRC ng/L</option>
+</select>
+</div>
+</div>
+
+<div style="margin-top:6px;font-size:12px;color:var(--text-muted);">
+  Note: DRC ↔ PRA conversion is <strong>approximate only</strong> — they measure different analytes. Use DRC-to-DRC comparisons for clinical decisions where possible.
+</div>
+
+<div class="result show" id="convResult" style="background:var(--surface-2);border:1px solid var(--border);">
+  <div class="result-head" style="color:var(--cyan);">📊 Converted Values</div>
+  <div id="convOutput">
+    <p style="font-size:13px;color:var(--text-muted);">Enter values above to see conversions.</p>
+  </div>
+</div>
+</div>
+
+<!-- ARR TABLE FOR ALL UNIT SYSTEMS -->
+<h3>📋 The Universal ARR Cutoff Table</h3>
+<p style="font-size:13.5px;">Find your lab's unit system in the left column, read across to see the ARR cutoff that applies. <strong>Do not mix units across rows.</strong></p>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>Unit system</th>
+<th>Aldosterone unit</th>
+<th>Renin unit</th>
+<th>ARR cutoff</th>
+<th>Equivalent US units</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background:rgba(34,211,238,.06);">
+<td><strong>🇺🇸 US (immunoassay)</strong></td>
+<td>ng/dL</td>
+<td>PRA ng/mL/h</td>
+<td><strong>&gt;20 (ES) / &gt;30 (AHA/ACC common)</strong></td>
+<td>—</td>
+</tr>
+<tr style="background:rgba(34,211,238,.06);">
+<td><strong>🇺🇸 US (LC-MS/MS)</strong></td>
+<td>ng/dL</td>
+<td>PRA ng/mL/h</td>
+<td><strong>~15 (25% lower)</strong></td>
+<td>≈15</td>
+</tr>
+<tr style="background:rgba(167,139,250,.06);">
+<td><strong>🇬🇧🇪🇺 UK / EU (immunoassay)</strong></td>
+<td>pmol/L</td>
+<td>DRC mU/L</td>
+<td><strong>&gt;70</strong></td>
+<td>≈30 (but different analyte)</td>
+</tr>
+<tr style="background:rgba(167,139,250,.06);">
+<td><strong>🇬🇧🇪🇺 UK / EU (LC-MS/MS)</strong></td>
+<td>pmol/L</td>
+<td>DRC mU/L</td>
+<td><strong>~52 (25% lower)</strong></td>
+<td>≈22</td>
+</tr>
+<tr style="background:rgba(251,191,36,.06);">
+<td><strong>🇨🇦 Canada (SI, PRA in seconds)</strong></td>
+<td>pmol/L</td>
+<td>PRA ng/mL/s</td>
+<td><strong>≈ 77 (imputed)</strong></td>
+<td>≈30</td>
+</tr>
+<tr style="background:rgba(251,191,36,.06);">
+<td><strong>🇨🇦 Canada (SI, PRA in ng/L/s)</strong></td>
+<td>pmol/L</td>
+<td>PRA ng/L/s</td>
+<td><strong>≈ 77,000</strong></td>
+<td>≈30</td>
+</tr>
+<tr style="background:rgba(52,211,153,.06);">
+<td><strong>🇦🇺 Australia (varies by lab)</strong></td>
+<td>pmol/L</td>
+<td>PRA pmol/L/min</td>
+<td><strong>Laboratory-specific — typically 70–100</strong></td>
+<td>~30–40</td>
+</tr>
+<tr style="background:rgba(96,165,250,.06);">
+<td><strong>🌐 Universal (any consistent unit)</strong></td>
+<td>same unit</td>
+<td>same unit</td>
+<td><strong>Use the cutoff your lab validated — never import one from another system</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- CONVERSION FACTOR REFERENCE -->
+<h3>📐 Conversion Factors — The Complete Reference</h3>
+
+<h4>Aldosterone</h4>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>From</th><th>To</th><th>Multiply by</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>ng/dL</td><td>pmol/L</td><td><strong>× 27.74</strong></td><td>US → SI</td></tr>
+<tr><td>pmol/L</td><td>ng/dL</td><td><strong>× 0.03605</strong></td><td>SI → US</td></tr>
+<tr><td>ng/dL</td><td>ng/L (pg/mL)</td><td><strong>× 10</strong></td><td>Same analyte, different scale</td></tr>
+<tr><td>ng/L (pg/mL)</td><td>ng/dL</td><td><strong>× 0.1</strong></td><td>—</td></tr>
+<tr><td>pmol/L</td><td>ng/L</td><td><strong>× 0.3605</strong></td><td>—</td></tr>
+<tr><td>ng/L</td><td>pmol/L</td><td><strong>× 2.774</strong></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Renin — PRA (plasma renin activity)</h4>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>From</th><th>To</th><th>Multiply by</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>ng/mL/h</td><td>ng/mL/s</td><td><strong>× 0.0002778 (÷3600)</strong></td><td>Hour → second</td></tr>
+<tr><td>ng/mL/h</td><td>ng/L/min</td><td><strong>× 16.67</strong></td><td>Common in some AU/NZ labs</td></tr>
+<tr><td>ng/mL/h</td><td>ng/L/s</td><td><strong>× 0.2778</strong></td><td>Canada SI</td></tr>
+<tr><td>ng/mL/s</td><td>ng/mL/h</td><td><strong>× 3600</strong></td><td>Second → hour</td></tr>
+<tr><td>ng/L/s</td><td>ng/mL/h</td><td><strong>× 3.6</strong></td><td>—</td></tr>
+<tr><td>ng/L/min</td><td>ng/mL/h</td><td><strong>× 0.06</strong></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Renin — DRC (direct renin concentration) ↔ PRA</h4>
+<div class="alert alert-warn" style="margin-top:0;">
+<strong>⚠️ DRC and PRA are different analytes.</strong> DRC measures renin protein concentration; PRA measures angiotensin I generated per unit time. There is <strong>no exact conversion</strong> — the relationship varies with substrate (angiotensinogen) concentration. The approximate factors below are for orientation only and <strong>must not</strong> be used for clinical cutoffs.
+</div>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>From</th><th>To</th><th>Approximate factor</th><th>Caution</th></tr></thead>
+<tbody>
+<tr><td>PRA ng/mL/h</td><td>DRC mU/L</td><td><strong>× ~8.2</strong></td><td>Approximate — varies by lab and substrate</td></tr>
+<tr><td>DRC mU/L</td><td>PRA ng/mL/h</td><td><strong>× ~0.122</strong></td><td>Approximate — do not use for ARR cutoffs</td></tr>
+<tr><td>DRC mU/L</td><td>DRC ng/L</td><td><strong>× 1</strong></td><td>Same value (mU/L and ng/L are numerically equivalent for renin)</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- WORKED EXAMPLES -->
+<h3>🧠 Worked Examples — Same Patient, Four Systems</h3>
+
+<div class="card">
+<h4>Example 1: A patient with primary aldosteronism</h4>
+<p style="font-size:13.5px;margin-bottom:10px;">Measured: aldosterone = 400 pmol/L, renin = 4 mU/L (DRC). Is the ARR positive?</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>System</th><th>Aldosterone</th><th>Renin</th><th>ARR</th><th>Cutoff</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr>
+<td>🇬🇧 UK / EU (as measured)</td>
+<td>400 pmol/L</td>
+<td>4 mU/L</td>
+<td><strong>100</strong></td>
+<td>&gt;70</td>
+<td style="color:var(--green);font-weight:700;">Positive ✓</td>
+</tr>
+<tr>
+<td>🇺🇸 US (converted)</td>
+<td>14.4 ng/dL</td>
+<td>0.49 ng/mL/h</td>
+<td><strong>29.4</strong></td>
+<td>&gt;20 (ES) / &gt;30</td>
+<td style="color:var(--amber);font-weight:700;">Positive by ES; borderline by AHA</td>
+</tr>
+<tr>
+<td>🇨🇦 Canada SI (converted)</td>
+<td>400 pmol/L</td>
+<td>0.0022 ng/mL/s</td>
+<td><strong>181,818</strong></td>
+<td>~(lab-specific)</td>
+<td style="color:var(--green);font-weight:700;">Positive ✓</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:12.5px;color:var(--text-muted);margin-top:8px;">The <em>same</em> patient is positive in all three systems — but the ARR number is wildly different (100 vs 29 vs 181,818). <strong>Never quote an ARR without units.</strong></p>
+</div>
+
+<div class="card">
+<h4>Example 2: A patient without PA (low-renin essential hypertension)</h4>
+<p style="font-size:13.5px;margin-bottom:10px;">Measured: aldosterone = 150 pmol/L, renin = 15 mU/L (DRC). Is the ARR positive?</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>System</th><th>Aldosterone</th><th>Renin</th><th>ARR</th><th>Cutoff</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr>
+<td>🇬🇧 UK / EU</td>
+<td>150 pmol/L</td>
+<td>15 mU/L</td>
+<td><strong>10</strong></td>
+<td>&gt;70</td>
+<td style="color:var(--red);font-weight:700;">Negative ✗</td>
+</tr>
+<tr>
+<td>🇺🇸 US</td>
+<td>5.4 ng/dL</td>
+<td>1.83 ng/mL/h</td>
+<td><strong>2.95</strong></td>
+<td>&gt;20</td>
+<td style="color:var(--red);font-weight:700;">Negative ✗</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3>🛠️ How to Use the Converter — Step by Step</h3>
+<div class="card">
+<ol style="font-size:13.5px;">
+<li><strong>Enter your aldosterone value and its unit</strong> (from your lab report).</li>
+<li><strong>Enter your renin value and its unit.</strong> Pay attention to whether your lab reports PRA (activity) or DRC (concentration), and whether time is in hours, minutes, or seconds.</li>
+<li><strong>Read the converted values</strong> in every system — US, SI, Canada, Australia.</li>
+<li><strong>Look up the ARR cutoff</strong> in the table above that matches <em>the unit system of the converted values you want to use</em>.</li>
+<li><strong>Compare</strong> — the patient should be positive (or negative) in every consistent system. If the answer flips depending on units, your conversion has an error.</li>
+</ol>
+</div>
+
+<h3>⚠️ Pitfalls Specific to International Practice</h3>
+<div class="tip-box tip-red">
+<div class="tip-box-head">Common conversion mistakes</div>
+<ul>
+<li><strong>Confusing PRA and DRC.</strong> These are different analytes. PRA ng/mL/h and DRC mU/L are <em>not</em> interchangeable — the conversion is approximate and substrate-dependent.</li>
+<li><strong>Forgetting the time unit.</strong> ng/mL/<strong>h</strong> vs ng/mL/<strong>s</strong> is a 3600× difference. Always check whether your lab reports per hour, per minute, or per second.</li>
+<li><strong>Using the wrong ARR cutoff.</strong> A cutoff of 30 (US ng/dL:ng/mL/h) is <em>not</em> equivalent to 30 in SI units (pmol/L:mU/L) — the SI equivalent is ~70.</li>
+<li><strong>Mixing ng/L and ng/dL for aldosterone.</strong> 1 ng/dL = 10 ng/L. A 10× error.</li>
+</ul>
+</div>
+
+<div class="tip-box tip-green">
+<div class="tip-box-head">✅ Safe practice</div>
+<ul>
+<li><strong>Always record units</strong> with any aldosterone, renin, or ARR value you document.</li>
+<li><strong>Use your own laboratory's validated cutoff</strong> whenever possible — it accounts for local assay calibration.</li>
+<li><strong>If your lab uses DRC, use DRC-based cutoffs</strong> (e.g., &gt;70 pmol/L:mU/L); if it uses PRA, use PRA-based cutoffs (e.g., &gt;20 or &gt;30).</li>
+<li><strong>When in doubt, calculate the ARR in the unit system your cutoff was validated in</strong> — do not mix.</li>
+</ul>
+</div>
+
+<div class="alert alert-success">
+<strong>💡 The one-line rule:</strong> An ARR value without units is meaningless. An ARR cutoff applied to the wrong units is dangerous. Always convert to the unit system the cutoff was derived in — or use your local lab's validated cutoff, which already accounts for your reporting units.
+</div>
+</section>
+
+<!-- ══════ ARR CALCULATOR ══════ -->
+<section class="section" id="arr-calc">
+<h2>ARR Calculator</h2>
+<p class="subtitle">Assay-aware aldosterone-to-renin ratio with simultaneous interpretation of all three biochemical criteria.</p>
+
+<div class="tip-box tip-cyan" style="margin-bottom:18px;">
+<div class="tip-box-head">📌 Before you calculate — quick check</div>
+<ul>
+<li>Was the sample drawn <strong>morning, seated</strong>, with the patient on <strong>liberal sodium</strong>?</li>
+<li>Was <strong>potassium normal</strong> at the time of sampling?</li>
+<li>Have <strong>MRAs been held</strong> for ≥4 weeks (spironolactone) or ≥2 weeks (eplerenone)?</li>
+<li>Are you using the <strong>assay-specific cutoff</strong> that matches your lab's method?</li>
+<li>If outside the US, have you <strong>converted units</strong> using the Unit Converter section first?</li>
+</ul>
+</div>
+
+<div class="calc">
+<div class="calc-grid">
+<div class="field">
+<label for="arrMode">Assay &amp; Units</label>
+<select id="arrMode" onchange="updateARRFields()">
+<option value="ia_ng">Immunoassay · PAC ng/dL + PRA ng/mL/h</option>
+<option value="ia_pmol">Immunoassay · PAC pmol/L + DRC mU/L</option>
+<option value="ms_ng">LC-MS/MS · PAC ng/dL + PRA ng/mL/h</option>
+<option value="ms_pmol">LC-MS/MS · PAC pmol/L + DRC mU/L</option>
+</select>
+</div>
+<div class="field">
+<label for="aldoVal" id="aldoLabel">Aldosterone (ng/dL)</label>
+<input type="number" id="aldoVal" step="0.1" placeholder="e.g. 15">
+<div class="hint" id="aldoHint">Immunoassay threshold: ≥10 ng/dL</div>
+</div>
+<div class="field">
+<label for="renVal" id="renLabel">Renin — PRA (ng/mL/h)</label>
+<input type="number" id="renVal" step="0.1" placeholder="e.g. 0.5">
+<div class="hint" id="renHint">Suppressed: &lt;1 ng/mL/h</div>
+</div>
+</div>
+<button class="btn" onclick="calcARR()">Calculate ARR</button>
+<button class="btn btn-ghost" onclick="resetARR()">Reset</button>
+
+<div class="result" id="arrResult"></div>
+</div>
+
+<div class="alert alert-warn">
+<strong>⚠️ Interpretation caveats.</strong> The ARR is a <em>screening</em> test, not a diagnostic one. A positive result requires confirmation and subtyping. A negative result does not exclude PA when pre-test probability is high — particularly if potassium was low at the time of sampling. Cutoffs are assay- and laboratory-specific; the values used here follow the 2025 AHA/ACC and Endocrine Society guidelines.
+</div>
+
+<h3>Reference: Assay-Specific Cutoffs Used</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Assay / Units</th><th>ARR Cutoff Used</th><th>Aldosterone Threshold</th><th>Renin Threshold</th></tr></thead>
+<tbody>
+<tr><td>Immunoassay · ng/dL ÷ ng/mL/h</td><td>&gt;20 (Endocrine Society); 30 commonly used (AHA/ACC); 20–40 supported</td><td>≥10 ng/dL</td><td>PRA &lt;1 ng/mL/h</td></tr>
+<tr><td>Immunoassay · pmol/L ÷ mU/L</td><td>&gt;70</td><td>≥277 pmol/L</td><td>DRC ≤8.2 mU/L</td></tr>
+<tr><td>LC-MS/MS · ng/dL ÷ ng/mL/h</td><td>~25% lower → ~15</td><td>≥7.5 ng/dL</td><td>PRA &lt;1 ng/mL/h</td></tr>
+<tr><td>LC-MS/MS · pmol/L ÷ mU/L</td><td>~25% lower → ~52</td><td>≥208 pmol/L</td><td>DRC ≤8.2 mU/L</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ══════ CONFIRMATORY TESTING ══════ -->
+<section class="section" id="confirmatory">
+<h2>Confirmatory Testing</h2>
+<p class="subtitle">Aldosterone suppression — and the growing debate about whether it is needed at all.</p>
+
+<h3>Step 1 — Refer <span class="badge badge-1">Class 1</span></h3>
+<div class="alert alert-info">
+A positive screen — <strong>or continued suspicion</strong> (suppressed renin, disproportionate target-organ damage) — warrants referral to a <strong>hypertension specialist or endocrinologist</strong>.
+</div>
+
+<h3>Step 2 — Confirm with Aldosterone Suppression</h3>
+<p style="font-size:13.5px;">Confirmation typically uses an aldosterone suppression test — either <strong>IV saline suppression</strong> or <strong>oral salt-loading</strong>. The physiologic principle: in normal physiology, volume expansion suppresses aldosterone; in PA, aldosterone secretion is autonomous and fails to suppress.</p>
+
+<div class="tabs" data-tab-group="confirm">
+<button class="tab active" data-tab="c-sit">IV Saline (SIT)</button>
+<button class="tab" data-tab="c-salt">Oral Salt Loading</button>
+<button class="tab" data-tab="c-cct">Captopril Challenge</button>
+<button class="tab" data-tab="c-fst">Fludrocortisone</button>
+</div>
+
+<div class="tab-panel active" id="c-sit">
+<div class="card">
+<h4>IV Saline Suppression Test (SIT)</h4>
+<p style="font-size:13.5px;">The most widely used confirmatory test. <strong>2 L of 0.9% saline infused IV over 4 hours</strong> in the recumbent position, with aldosterone measured at baseline and at completion.</p>
+<p style="font-size:13.5px;margin-top:8px;"><strong>Interpretation:</strong> Failure of aldosterone to suppress below the protocol threshold is consistent with PA. Exact post-infusion cutoffs vary by assay and protocol — most commonly aldosterone &gt;10 ng/dL, though lower thresholds are used with LC-MS/MS.</p>
+<p class="src-note">Protocol specifics are standard endocrinology practice and not detailed in the retrieved sources — verify against your local laboratory protocol.</p>
+</div>
+</div>
+
+<div class="tab-panel" id="c-salt">
+<div class="card">
+<h4>Oral Salt Loading Test</h4>
+<p style="font-size:13.5px;">High-sodium diet for <strong>3 days</strong> with sodium supplementation, followed by measurement of <strong>24-hour urinary aldosterone</strong>. Adequate sodium loading is confirmed by 24-hour urinary sodium measurement.</p>
+<p style="font-size:13.5px;margin-top:8px;"><strong>Interpretation:</strong> Urinary aldosterone excretion that fails to suppress is consistent with PA.</p>
+<p class="src-note">Protocol specifics are standard practice and not detailed in the retrieved sources.</p>
+</div>
+</div>
+
+<div class="tab-panel" id="c-cct">
+<div class="card">
+<h4>Captopril Challenge Test (CCT)</h4>
+<p style="font-size:13.5px;">Oral captopril administered with aldosterone and renin measured before and after. In normal physiology, ACE inhibition lowers aldosterone; in PA, aldosterone remains elevated and the ARR does not normalize.</p>
+<p style="font-size:13.5px;margin-top:8px;">Simpler and safer than SIT in patients at risk of volume overload — but considered somewhat less definitive.</p>
+<p class="src-note">Protocol specifics are standard practice and not detailed in the retrieved sources.</p>
+</div>
+</div>
+
+<div class="tab-panel" id="c-fst">
+<div class="card">
+<h4>Fludrocortisone Suppression Test (FST)</h4>
+<p style="font-size:13.5px;">Used predominantly in Australia and some European centers. Fludrocortisone plus sodium loading over several days, with serial aldosterone measurement. Considered highly sensitive but labor-intensive and requires careful monitoring for hypokalemia and volume overload.</p>
+<p class="src-note">Protocol specifics are standard practice and not detailed in the retrieved sources.</p>
+</div>
+</div>
+
+<h3>The Evolving View: Is Confirmatory Testing Still Needed?</h3>
+<div class="alert alert-warn">
+<strong>⚠️ Some experts and the JAMA Internal Medicine review argue the role of aldosterone suppression testing is uncertain.</strong> Reasons cited:
+<ul style="margin-top:8px;">
+<li><strong>High false-negative rates</strong> — patients with genuine PA may suppress on testing and be incorrectly excluded</li>
+<li>Emphasis should instead be placed on <strong>interpreting the individual renin and aldosterone values</strong>, rather than relying heavily on the ARR — which compounds the measurement error of both assays</li>
+<li><strong>Suppressed renin despite RAAS inhibitors or diuretics</strong> is itself strongly suggestive of PA, and may carry as much diagnostic weight as a suppression test</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Where this leaves the clinician</h4>
+<p style="font-size:13.5px;">The AHA/ACC and Endocrine Society guidelines still describe confirmatory testing as part of the standard pathway. The JAMA review does not advocate abandoning it, but argues it should not be treated as an absolute gatekeeper — particularly when the biochemical picture is unambiguous (markedly suppressed renin, high aldosterone, hypokalemia) or when the patient is not a surgical candidate anyway.</p>
+<p style="font-size:13.5px;margin-top:8px;"><strong>Also note:</strong> a <strong>strongly positive screen should prompt adrenal CT</strong> — regardless of whether confirmatory testing is pursued.</p>
+</div>
+</section>
+
+<!-- ══════ SUBTYPING ══════ -->
+<section class="section" id="subtyping">
+<h2>Subtyping: CT &amp; Adrenal Vein Sampling</h2>
+<p class="subtitle">Distinguishing unilateral from bilateral disease — the decision that determines surgery versus medication.</p>
+
+<div class="alert alert-danger">
+<strong>🎯 The central rule:</strong> Cross-sectional imaging <strong>cannot determine functional activity</strong>. CT alone misclassifies bilateral hyperplasia and nonfunctioning nodules as unilateral adenomas. If the patient may be a surgical candidate, <strong>AVS is required</strong> regardless of what CT shows.
+</div>
+
+<h3>Why CT Alone Is Insufficient</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li>CT identifies <strong>anatomy</strong>, not <strong>function</strong></li>
+<li>Nonfunctioning adrenal incidentalomas are common, especially with age</li>
+<li>Bilateral hyperplasia can appear asymmetric on imaging</li>
+<li>CT–AVS discordance is frequent — the JAMA review notes AVS should generally be pursued <strong>regardless of CT findings</strong></li>
+</ul>
+</div>
+
+<h3>When AVS May Be Bypassed — The Recognized Exception</h3>
+<div class="alert alert-success">
+<strong>Endocrine Society recognized exception:</strong> AVS may be bypassed in a patient <strong>&lt;35 years</strong> with:
+<ul style="margin-top:8px;">
+<li><strong>Marked PA</strong> (unambiguous biochemistry)</li>
+<li><strong>Hypokalemia</strong></li>
+<li><strong>A &gt;1 cm unilateral adenoma on CT</strong></li>
+</ul>
+In this narrow scenario, the combination of young age, florid biochemistry, and a clear unilateral adenoma makes unilateral disease sufficiently likely to proceed directly to surgery.
+</div>
+
+<div class="card">
+<h4>Other situations where AVS may be skipped <span class="badge badge-info">JAMA review</span></h4>
+<ul style="font-size:13.5px;">
+<li>Patient is <strong>not interested in</strong> or <strong>not a candidate for</strong> surgery</li>
+<li>Only a <strong>mildly positive ARR</strong></li>
+</ul>
+<p style="font-size:13.5px;margin-top:8px;">In these cases, the result would not change management — the patient will receive medical therapy either way. Note that adrenal imaging should still be obtained.</p>
+</div>
+
+<h3>Adrenal Imaging — Always Obtain CT</h3>
+<div class="alert alert-warn">
+<strong>CT should be obtained even if medical treatment is planned</strong> — to exclude a <strong>large mass (&gt;4 cm or with suspicious features)</strong> that could represent adrenocortical carcinoma. This is a safety measure independent of the PA workup.
+</div>
+
+<h3>Adrenal Venous Sampling — The Protocol</h3>
+<p style="font-size:13.5px;">AVS is the gold standard for lateralization. Adrenal vein blood is sampled bilaterally and compared with a peripheral (usually IVC) sample, with <strong>cortisol used as the normalizing hormone</strong> to correct for dilution from imperfect catheter positioning.</p>
+
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Step</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Medication prep</strong></td><td>Withhold MRAs — spironolactone generally 4–6 weeks (long half-life), eplerenone ~2–4 weeks. Hypokalemia should be corrected.</td></tr>
+<tr><td><strong>Technique</strong></td><td>Simultaneous bilateral catheterization, or sequential sampling. Simultaneous is preferred where expertise allows.</td></tr>
+<tr><td><strong>ACTH stimulation</strong></td><td>Cosyntropin infusion is commonly used to reduce stress-related fluctuations in aldosterone and improve the reproducibility of lateralization. Protocols vary — some centers do not stimulate.</td></tr>
+<tr><td><strong>Samples</strong></td><td>Right adrenal vein, left adrenal vein, and a peripheral (IVC) sample — each measured for <strong>aldosterone and cortisol</strong>.</td></tr>
+<tr><td><strong>Complications</strong></td><td>Adrenal hemorrhage and adrenal infarction are the principal risks; rates are low in experienced hands but not negligible.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="src-note">AVS procedural details and numeric index thresholds reflect standard endocrine practice and the AVS literature. They are not specified in the retrieved guideline sources — always follow your local interventional radiology and endocrinology protocol.</p>
+
+<h3>Interpreting AVS — The Two Indices</h3>
+<div class="card-grid">
+<div class="card">
+<h4>Selectivity Index (SI)</h4>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Purpose:</strong> Confirms the catheter actually reached the adrenal vein.</p>
+<p style="font-size:13px;font-family:monospace;background:var(--bg);padding:8px 10px;border-radius:6px;margin-bottom:8px;">SI = adrenal vein cortisol ÷ peripheral cortisol</p>
+<p style="font-size:13px;">Typical thresholds: <strong>≥2</strong> unstimulated, <strong>≥3</strong> (some protocols ≥5) with ACTH stimulation.</p>
+</div>
+<div class="card">
+<h4>Lateralization Index (LI)</h4>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Purpose:</strong> Determines whether aldosterone excess is unilateral or bilateral.</p>
+<p style="font-size:13px;font-family:monospace;background:var(--bg);padding:8px 10px;border-radius:6px;margin-bottom:8px;">LI = (A/C)<sub>dominant</sub> ÷ (A/C)<sub>non-dominant</sub></p>
+<p style="font-size:13px;">Typical threshold: <strong>≥4</strong> unstimulated suggests unilateral disease. With ACTH stimulation, thresholds of <strong>≥2 to ≥4</strong> are used depending on protocol.</p>
+</div>
+<div class="card">
+<h4>Contralateral Suppression Index (CSI)</h4>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Purpose:</strong> Supports unilateral disease by showing the opposite gland is suppressed.</p>
+<p style="font-size:13px;font-family:monospace;background:var(--bg);padding:8px 10px;border-radius:6px;margin-bottom:8px;">CSI = (A/C)<sub>non-dominant</sub> ÷ (A/C)<sub>peripheral</sub></p>
+<p style="font-size:13px;">A value <strong>&lt;1</strong> indicates suppression of the contralateral gland.</p>
+</div>
+<div class="card">
+<h4>Why Thresholds Vary</h4>
+<p style="font-size:13px;color:var(--text-muted);">LI and SI thresholds differ substantially between protocols — particularly whether ACTH stimulation is used, which assay measures aldosterone, and the reference population used to derive the cutoff. <strong>A single universal cutoff does not exist.</strong></p>
+</div>
+</div>
+</section>
+
+<!-- ══════ AVS CALCULATOR ══════ -->
+<section class="section" id="avs-calc">
+<h2>AVS Index Calculator</h2>
+<p class="subtitle">Selectivity index, lateralization index, and contralateral suppression index from raw AVS values.</p>
+
+<div class="tip-box tip-purple" style="margin-bottom:18px;">
+<div class="tip-box-head">📌 Before you calculate</div>
+<ul>
+<li>Were <strong>MRAs held</strong> (spironolactone 4–6 wk; eplerenone 2–4 wk)?</li>
+<li>Was <strong>hypokalemia corrected</strong> before the procedure?</li>
+<li>Is this an <strong>ACTH-stimulated</strong> or <strong>unstimulated</strong> protocol? (Thresholds differ.)</li>
+<li>Are aldosterone and cortisol reported in <strong>the same units</strong> across all samples?</li>
+<li>Does the <strong>Selectivity Index</strong> confirm successful cannulation on both sides?</li>
+</ul>
+</div>
+
+<div class="calc">
+<div class="calc-grid">
+<div class="field">
+<label for="pCort">Peripheral cortisol</label>
+<input type="number" id="pCort" step="0.1" placeholder="e.g. 15">
+<div class="hint">IVC / peripheral sample</div>
+</div>
+<div class="field">
+<label for="pAldo">Peripheral aldosterone</label>
+<input type="number" id="pAldo" step="0.1" placeholder="e.g. 8">
+<div class="hint">Needed for CSI</div>
+</div>
+<div class="field">
+<label for="rCort">Right adrenal vein cortisol</label>
+<input type="number" id="rCort" step="0.1" placeholder="e.g. 220">
+</div>
+<div class="field">
+<label for="rAldo">Right adrenal vein aldosterone</label>
+<input type="number" id="rAldo" step="0.1" placeholder="e.g. 340">
+</div>
+<div class="field">
+<label for="lCort">Left adrenal vein cortisol</label>
+<input type="number" id="lCort" step="0.1" placeholder="e.g. 190">
+</div>
+<div class="field">
+<label for="lAldo">Left adrenal vein aldosterone</label>
+<input type="number" id="lAldo" step="0.1" placeholder="e.g. 95">
+</div>
+<div class="field">
+<label for="acthStim">Protocol</label>
+<select id="acthStim">
+<option value="unstim">Unstimulated</option>
+<option value="stim">ACTH-stimulated</option>
+</select>
+</div>
+</div>
+<button class="btn" onclick="calcAVS()">Calculate Indices</button>
+<button class="btn btn-ghost" onclick="resetAVS()">Reset</button>
+
+<div class="result" id="avsResult"></div>
+</div>
+
+<div class="alert alert-warn">
+<strong>⚠️ Use with caution.</strong> These indices are protocol-dependent. Thresholds shown are common reference values; your institution's interventional radiology and endocrine services may use different cutoffs. The calculator assumes aldosterone and cortisol are reported in the <strong>same units</strong> across all samples — the A/C ratio is unitless, so as long as units are consistent, the result is valid.
+</div>
+
+<h3>Reference Thresholds Used</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Index</th><th>Unstimulated</th><th>ACTH-Stimulated</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td><strong>Selectivity Index</strong></td><td>≥2</td><td>≥3 (some protocols ≥5)</td><td>Successful cannulation</td></tr>
+<tr><td><strong>Lateralization Index</strong></td><td>≥4</td><td>≥2 to ≥4</td><td>Unilateral aldosterone excess</td></tr>
+<tr><td><strong>Contralateral Suppression Index</strong></td><td>&lt;1</td><td>&lt;1</td><td>Contralateral gland suppressed</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ══════ PA TREATMENT ══════ -->
+<section class="section" id="treatment">
+<h2>PA Treatment</h2>
+<p class="subtitle">From lateralization result to definitive management.</p>
+
+<h3>Decision Point: Unilateral vs Bilateral</h3>
+<div class="card-grid">
+<div class="card" style="border-left:4px solid var(--green);">
+<h4>Unilateral Excess → Surgery</h4>
+<p style="font-size:13.5px;">Proceed to <strong>unilateral laparoscopic adrenalectomy</strong>. This is the only potentially curative option — it addresses both the hypertension and the aldosterone excess at the source.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--accent-2);">
+<h4>Bilateral Disease / Nonsurgical → MRA</h4>
+<p style="font-size:13.5px;">Treat with a <strong>mineralocorticoid receptor antagonist</strong>. Bilateral hyperplasia is not amenable to surgery, and patients who decline or are unfit for surgery receive the same medical therapy.</p>
+</div>
+</div>
+
+<h3>Adrenal Imaging — Always, Regardless of Plan</h3>
+<div class="alert alert-danger">
+<strong>CT should be obtained even if medical treatment is planned</strong> — to exclude a <strong>large mass (&gt;4 cm or with suspicious features)</strong> that could represent malignancy. This is a cancer-safety step, not merely part of the PA subtyping workup.
+</div>
+
+<h3>Medical Therapy — Practical Points</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Consideration</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>First-line MRA</strong></td><td>Spironolactone is the traditional first-line agent. Eplerenone is an alternative where spironolactone is not tolerated.</td></tr>
+<tr><td><strong>Spironolactone tolerability</strong></td><td>Anti-androgenic effects — gynecomastia, breast tenderness, menstrual irregularity, reduced libido — are dose-dependent and a common reason for switching to eplerenone.</td></tr>
+<tr><td><strong>Dose titration</strong></td><td>Titrate to control both blood pressure and serum potassium. PA patients are often relatively resistant and may require higher doses than typical heart-failure dosing.</td></tr>
+<tr><td><strong>Potassium monitoring</strong></td><td>Potassium rises as aldosterone is blocked. Monitor closely after initiation and with each dose change — but note that PA patients tolerate this better than essential hypertension patients on MRAs.</td></tr>
+<tr><td><strong>Renin as a guide</strong></td><td>Rising renin (and PRA) can be used as a marker of adequate MR blockade — a rising renin suggests the receptor is effectively blocked.</td></tr>
+</tbody>
+</table>
+<p class="src-note">Specific MRA dosing and monitoring details are standard endocrinology practice and are not detailed in the retrieved sources.</p>
+</div>
+
+<h3>Post-Adrenalectomy Considerations</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Anticipate resolution of hypokalemia</strong> — potassium supplementation can usually be stopped quickly after surgery</li>
+<li><strong>Transient hyperkalemia</strong> may occur as the suppressed contralateral gland recovers — monitor closely in the early postoperative period</li>
+<li><strong>Blood pressure response is variable</strong> — some patients are cured, others improve but remain hypertensive, and a minority see no change. Duration of hypertension before surgery and the number of preoperative antihypertensives are the usual predictors.</li>
+<li><strong>Continue to monitor</strong> — biochemical cure is more reliable than blood pressure cure</li>
+</ul>
+</div>
+
+<div class="alert alert-success">
+<strong>💡 The therapeutic payoff:</strong> PA is the most common identifiable secondary cause of hypertension precisely because it is actionable. Unilateral disease can be cured surgically; bilateral disease can be treated with targeted medical therapy that addresses the underlying mechanism rather than merely lowering blood pressure.
+</div>
+</section>
+
+<!-- ══════ OTHER SECONDARY CAUSES — FULL WORKUP ══════ -->
+<section class="section" id="other">
+<h2>Other Secondary Causes — Full Workup Guide</h2>
+<p class="subtitle">When to suspect, screening test, and confirmatory/next test for each secondary cause of hypertension.</p>
+
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>Secondary cause</th>
+<th>When to suspect</th>
+<th>Screening test</th>
+<th>Confirmatory / next test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary aldosteronism</strong></td>
+<td>Resistant HTN, hypokalemia, OSA, adrenal mass, early-onset HTN/stroke, stage 2 HTN</td>
+<td>Aldosterone, renin, ARR</td>
+<td>Saline/oral salt-load suppression; CT; adrenal vein sampling</td>
+</tr>
+<tr>
+<td><strong>Pheochromocytoma/paraganglioma</strong></td>
+<td>Paroxysmal HTN, headache, sweating, palpitations, adrenal mass</td>
+<td>Plasma or 24-h urine fractionated metanephrines</td>
+<td>CT/MRI; Ga-DOTATATE PET/CT</td>
+</tr>
+<tr>
+<td><strong>Cushing syndrome</strong></td>
+<td>Central obesity, striae, proximal weakness, hyperglycemia</td>
+<td>Overnight 1-mg dexamethasone suppression</td>
+<td>24-h urinary free cortisol; midnight salivary cortisol</td>
+</tr>
+<tr>
+<td><strong>Renovascular disease</strong></td>
+<td>Resistant HTN, flash pulmonary edema, Cr rise on ACEi/ARB, kidney size asymmetry</td>
+<td>Renal duplex ultrasound</td>
+<td>CT/MR angiography</td>
+</tr>
+<tr>
+<td><strong>Thyroid disease</strong></td>
+<td>Symptoms of hypo-/hyperthyroidism</td>
+<td>TSH, free T4</td>
+<td>Radioactive iodine uptake (hyperthyroidism)</td>
+</tr>
+<tr>
+<td><strong>OSA</strong></td>
+<td>Daytime somnolence, snoring, resistant HTN</td>
+<td>Screening questionnaire/home polygraphy</td>
+<td>Polysomnography</td>
+</tr>
+<tr>
+<td><strong>Coarctation</strong></td>
+<td>Age &lt;30 with HTN, arm &gt; leg BP, absent femoral pulses</td>
+<td>Echocardiogram</td>
+<td>CT/MR angiography</td>
+</tr>
+<tr>
+<td><strong>Primary hyperparathyroidism</strong></td>
+<td>Hypercalcemia, recurrent stones, bone pain</td>
+<td>Serum calcium</td>
+<td>PTH</td>
+</tr>
+<tr>
+<td><strong>Acromegaly</strong></td>
+<td>Acral enlargement, headache, visual changes, sleep apnea</td>
+<td>GH during oral glucose load, IGF-1</td>
+<td>Pituitary MRI</td>
+</tr>
+<tr>
+<td><strong>Non-aldosterone mineralocorticoid excess / CAH</strong></td>
+<td>Low renin and aldosterone with hypokalemia</td>
+<td>Urinary cortisol metabolites, genetic testing</td>
+<td>Genetic testing</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="alert alert-info">
+<strong>💡 Note on scope:</strong> The AHA/ACC 2025 guideline provides the screening framework for all these causes. The PA-specific sections of this tool go deeper because PA is the most common and most actionable.
+</div>
+</section>
+
+<!-- ══════ PHEO ══════ -->
+<section class="section" id="pheo">
+<h2>Pheochromocytoma / Paraganglioma</h2>
+<p class="subtitle">The classic paroxysmal cause — potentially lethal if missed, but highly treatable.</p>
+
+<h3>When to Suspect</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Paroxysmal hypertension</strong> — episodic, often with the classic triad of <strong>headache, palpitations, and diaphoresis</strong></li>
+<li><strong>Adrenal mass</strong> discovered incidentally</li>
+<li><strong>Resistant hypertension</strong></li>
+<li><strong>Young-onset hypertension</strong></li>
+<li><strong>Paradoxical BP response</strong> to beta-blockers (unopposed alpha stimulation)</li>
+<li><strong>Family history</strong> of pheo/paraganglioma or syndromic features (MEN2, VHL, NF1, SDHx mutations)</li>
+</ul>
+</div>
+
+<h3>Screening Test</h3>
+<div class="card">
+<h4>Plasma free metanephrines <span class="badge badge-1">preferred</span></h4>
+<p style="font-size:13.5px;">The most sensitive test. Draw <strong>supine, after 30 minutes rest</strong>, with the patient fasting. Avoid caffeine, acetaminophen, and interfering medications for 24 hours before.</p>
+<h4>24-hour urinary fractionated metanephrines</h4>
+<p style="font-size:13.5px;">Alternative if plasma testing is not available or if the patient cannot meet supine-draw requirements. Highly specific but less sensitive than plasma free metanephrines.</p>
+<p class="src-note">Screening tests per AHA/ACC 2025 and standard endocrine practice.</p>
+</div>
+
+<h3>Confirmatory / Next Tests</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>CT/MRI abdomen-pelvis</strong> — to localize the tumor</li>
+<li><strong>Ga-DOTATATE PET/CT</strong> — for metastatic, recurrent, or extra-adrenal disease, and for head/neck paraganglioma</li>
+<li><strong>Genetic testing</strong> — all patients with pheo/paraganglioma should be offered testing for germline mutations (SDHB, SDHD, VHL, RET, NF1, MAX, TMEM127)</li>
+</ul>
+</div>
+
+<h3>Management Overview</h3>
+<div class="alert alert-warn">
+<strong>⚠️ Critical pre-operative preparation:</strong> All patients need <strong>alpha-blockade first</strong> (phenoxybenzamine or doxazosin), followed by <strong>beta-blockade only after alpha-blockade is established</strong> — to avoid unopposed alpha stimulation and hypertensive crisis. Volume expansion with high salt intake is also essential.
+</div>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Surgical resection</strong> is the definitive treatment for localized disease</li>
+<li><strong>Metastatic disease</strong> — treated with systemic therapy (CVD chemotherapy, MIBG, peptide receptor radionuclide therapy, tyrosine kinase inhibitors)</li>
+<li><strong>Lifelong surveillance</strong> is required — recurrence rates are not trivial</li>
+</ul>
+</div>
+<p class="src-note">Management overview is standard endocrine/surgical practice and not detailed in the retrieved guideline sources.</p>
+</section>
+
+<!-- ══════ CUSHING ══════ -->
+<section class="section" id="cushing">
+<h2>Cushing Syndrome</h2>
+<p class="subtitle">Endogenous cortisol excess — a common and under-recognized secondary cause.</p>
+
+<h3>When to Suspect</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Central obesity</strong> with facial rounding (moon face) and dorsocervical fat pad (buffalo hump)</li>
+<li><strong>Proximal muscle weakness</strong> (difficulty rising from a chair, climbing stairs)</li>
+<li><strong>Wide purple striae</strong> (&gt;1 cm)</li>
+<li><strong>Easy bruising</strong></li>
+<li><strong>Hyperglycemia / diabetes</strong></li>
+<li><strong>Osteoporosis</strong> at a young age</li>
+<li><strong>Resistant hypertension</strong></li>
+<li><strong>Adrenal incidentaloma</strong></li>
+</ul>
+</div>
+
+<h3>Screening Test <span class="badge badge-1">AHA/ACC</span></h3>
+<div class="card">
+<h4>Overnight 1-mg dexamethasone suppression test</h4>
+<p style="font-size:13.5px;">1 mg dexamethasone at 11 PM, serum cortisol at 8 AM. A normal response is cortisol &lt;1.8 µg/dL (50 nmol/L). Values above this require further evaluation.</p>
+</div>
+
+<h3>Confirmatory / Next Tests</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>24-hour urinary free cortisol</strong> — two measurements recommended</li>
+<li><strong>Midnight salivary cortisol</strong> — two measurements, ideally on separate days</li>
+<li><strong>Late-night serum cortisol</strong> — if the above are equivocal</li>
+<li><strong>ACTH measurement</strong> — distinguishes ACTH-dependent (pituitary or ectopic) from ACTH-independent (adrenal) causes</li>
+<li><strong>Pituitary MRI</strong> — if ACTH-dependent</li>
+<li><strong>Adrenal CT</strong> — if ACTH-independent</li>
+</ul>
+</div>
+
+<h3>Management Overview</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Cushing disease</strong> (pituitary adenoma) — transsphenoidal surgery is first-line</li>
+<li><strong>Adrenal adenoma</strong> — laparoscopic adrenalectomy</li>
+<li><strong>Ectopic ACTH</strong> — treat the underlying tumor</li>
+<li><strong>Medical therapy</strong> — steroidogenesis inhibitors (ketoconazole, metyrapone, osilodrostat), or mifepristone for refractory cases</li>
+</ul>
+</div>
+<p class="src-note">Management overview is standard endocrine practice and not detailed in the retrieved guideline sources.</p>
+</section>
+
+<!-- ══════ RENOVASCULAR ══════ -->
+<section class="section" id="reno">
+<h2>Renovascular Disease</h2>
+<p class="subtitle">Renal artery stenosis — atherosclerotic or fibromuscular dysplasia.</p>
+
+<h3>When to Suspect</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Resistant hypertension</strong></li>
+<li><strong>Flash pulmonary edema</strong> — especially recurrent</li>
+<li><strong>Acute creatinine rise</strong> (&gt;30%) after starting an ACE inhibitor or ARB</li>
+<li><strong>Kidney size asymmetry</strong> (&gt;1.5 cm difference)</li>
+<li><strong>Abdominal bruit</strong></li>
+<li><strong>Young-onset hypertension</strong> (fibromuscular dysplasia, especially in women 15–50)</li>
+<li><strong>Atherosclerotic disease elsewhere</strong> (CAD, PAD, carotid disease)</li>
+</ul>
+</div>
+
+<h3>Screening Test</h3>
+<div class="card">
+<h4>Renal duplex ultrasound</h4>
+<p style="font-size:13.5px;">Non-invasive, no contrast, no radiation. Operator-dependent. Detects hemodynamically significant stenosis via peak systolic velocity and renal-aortic ratio.</p>
+<p class="src-note">Screening test per AHA/ACC 2025 and standard practice.</p>
+</div>
+
+<h3>Confirmatory / Next Tests</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>CT angiography</strong> — high spatial resolution, but requires iodinated contrast (nephrotoxic risk)</li>
+<li><strong>MR angiography</strong> — avoids iodinated contrast but gadolinium risk in advanced CKD; less sensitive for FMD</li>
+<li><strong>Catheter angiography</strong> — gold standard, allows simultaneous intervention if indicated</li>
+</ul>
+</div>
+
+<h3>Management Overview</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Medical therapy</strong> — ACE inhibitors/ARBs, statins, antiplatelet therapy, BP control. Monitor creatinine and potassium closely after starting RAAS blockade.</li>
+<li><strong>Revascularization</strong> — considered for refractory hypertension, flash pulmonary edema, or deteriorating renal function. Options: percutaneous transluminal renal angioplasty (PTRA) ± stenting, or surgical revascularization.</li>
+<li><strong>Fibromuscular dysplasia</strong> — PTRA without stenting is often curative</li>
+<li><strong>Atherosclerotic stenosis</strong> — medical therapy is first-line for most; revascularization reserved for specific indications</li>
+</ul>
+</div>
+<p class="src-note">Management overview is standard nephrology/vascular practice and not detailed in the retrieved guideline sources.</p>
+</section>
+
+<!-- ══════ THYROID & OSA ══════ -->
+<section class="section" id="thyroid-osa">
+<h2>Thyroid Disease &amp; Obstructive Sleep Apnea</h2>
+<p class="subtitle">Two common, easily screened contributors to hypertension.</p>
+
+<h3>Thyroid Disease</h3>
+<div class="card">
+<h4>When to suspect</h4>
+<ul style="font-size:13.5px;">
+<li><strong>Hyperthyroidism</strong> — weight loss, heat intolerance, tremor, palpitations, widened pulse pressure</li>
+<li><strong>Hypothyroidism</strong> — fatigue, cold intolerance, weight gain, constipation, diastolic hypertension</li>
+<li><strong>Atrial fibrillation</strong> — always check TSH</li>
+</ul>
+<h4>Screening test <span class="badge badge-1">AHA/ACC</span></h4>
+<p style="font-size:13.5px;"><strong>TSH and free thyroxine (free T4)</strong> — first-line for both hypo- and hyperthyroidism.</p>
+<h4>Confirmatory / next test</h4>
+<p style="font-size:13.5px;">Radioactive iodine uptake (RAIU) for hyperthyroidism — distinguishes Graves disease, toxic nodular goiter, and thyroiditis.</p>
+<h4>Management overview</h4>
+<ul style="font-size:13.5px;">
+<li><strong>Hyperthyroidism</strong> — antithyroid drugs (methimazole, PTU), radioactive iodine, or surgery</li>
+<li><strong>Hypothyroidism</strong> — levothyroxine replacement, titrated to TSH</li>
+</ul>
+</div>
+
+<h3>Obstructive Sleep Apnea</h3>
+<div class="card">
+<h4>When to suspect</h4>
+<ul style="font-size:13.5px;">
+<li><strong>Daytime somnolence</strong> — Epworth Sleepiness Scale</li>
+<li><strong>Loud snoring</strong> reported by partner</li>
+<li><strong>Witnessed apneas</strong></li>
+<li><strong>Resistant hypertension</strong></li>
+<li><strong>Non-dipping nocturnal BP</strong></li>
+<li><strong>Atrial fibrillation</strong></li>
+<li>Note: OSA is also a <strong>Class 1 screening indication for PA itself</strong></li>
+</ul>
+<h4>Screening test <span class="badge badge-1">AHA/ACC</span></h4>
+<p style="font-size:13.5px;"><strong>Screening questionnaire</strong> (STOP-BANG, Epworth) and/or <strong>home polygraphy</strong>.</p>
+<h4>Confirmatory / next test</h4>
+<p style="font-size:13.5px;"><strong>Polysomnography</strong> — gold standard; quantifies apnea-hypopnea index (AHI) and oxygen desaturation.</p>
+<h4>Management overview</h4>
+<ul style="font-size:13.5px;">
+<li><strong>CPAP</strong> — first-line for moderate-to-severe OSA; improves BP modestly but significantly</li>
+<li><strong>Mandibular advancement devices</strong> — for mild-moderate OSA or CPAP intolerance</li>
+<li><strong>Weight loss</strong> — often the most effective long-term intervention</li>
+<li><strong>Surgical options</strong> — for selected anatomical causes</li>
+</ul>
+</div>
+<p class="src-note">Thyroid and OSA screening tests per AHA/ACC 2025 and standard practice. Management overview is standard practice and not detailed in the retrieved guideline sources.</p>
+</section>
+
+<!-- ══════ RARE CAUSES ══════ -->
+<section class="section" id="rare">
+<h2>Rare Causes</h2>
+<p class="subtitle">Less common but important secondary causes to consider when the standard workup is unrevealing.</p>
+
+<div class="card-grid">
+<div class="card">
+<h4>🫀 Aortic coarctation</h4>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Suspect:</strong> Age &lt;30 with hypertension, arm &gt; leg BP, absent femoral pulses, systolic murmur.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Screen:</strong> Echocardiogram.</p>
+<p style="font-size:13px;color:var(--text-muted);"><strong>Confirm:</strong> CT/MR angiography.</p>
+</div>
+<div class="card">
+<h4>🦴 Primary hyperparathyroidism</h4>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Suspect:</strong> Hypercalcemia, recurrent kidney stones, bone pain, fractures, constipation.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Screen:</strong> Serum calcium (with albumin or ionized calcium).</p>
+<p style="font-size:13px;color:var(--text-muted);"><strong>Confirm:</strong> PTH level — inappropriately normal or elevated PTH with hypercalcemia confirms the diagnosis.</p>
+</div>
+<div class="card">
+<h4>🧬 Acromegaly</h4>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Suspect:</strong> Acral enlargement (hands, feet, jaw), headache, visual field defects, sleep apnea, hypertension, diabetes.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Screen:</strong> GH during oral glucose load, IGF-1.</p>
+<p style="font-size:13px;color:var(--text-muted);"><strong>Confirm:</strong> Pituitary MRI.</p>
+</div>
+<div class="card">
+<h4>🧪 Non-aldosterone mineralocorticoid excess / CAH</h4>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Suspect:</strong> Low renin and aldosterone with hypokalemia; ambiguous genitalia or virilization; family history.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;"><strong>Screen:</strong> Urinary cortisol metabolites, genetic testing.</p>
+<p style="font-size:13px;color:var(--text-muted);"><strong>Confirm:</strong> Genetic testing for specific enzyme deficiencies (11β-hydroxylase, 17α-hydroxylase, etc.).</p>
+</div>
+<div class="card">
+<h4>💊 Drug-induced hypertension</h4>
+<p style="font-size:13px;color:var(--text-muted);"><strong>Suspect:</strong> Always. Review prescription, OTC, herbal, and illicit agents.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-top:8px;"><strong>Common culprits:</strong> NSAIDs, oral contraceptives, glucocorticoids, calcineurin inhibitors (cyclosporine, tacrolimus), VEGF inhibitors (bevacizumab, sunitinib), sympathomimetics (decongestants, stimulants), licorice, alcohol, erythropoietin.</p>
+</div>
+<div class="card">
+<h4>🧠 Other endocrine causes</h4>
+<p style="font-size:13px;color:var(--text-muted);"><strong>Congenital adrenal hyperplasia</strong> — 11β-hydroxylase deficiency causes hypertension and virilization.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-top:8px;"><strong>Liddle syndrome</strong> — rare monogenic hypertension with hypokalemia and metabolic alkalosis; low renin and aldosterone; responds to amiloride.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-top:8px;"><strong>Apparent mineralocorticoid excess (AME)</strong> — cortisol acts as a mineralocorticoid due to 11β-HSD2 deficiency; low renin and aldosterone; treat with spironolactone.</p>
+</div>
+</div>
+
+<div class="alert alert-info">
+<strong>💡 When to consider genetic testing:</strong> Young-onset hypertension (&lt;40), family history of early-onset hypertension or stroke, hypokalemia with metabolic alkalosis, or syndromic features suggesting a monogenic cause.
+</div>
+</section>
+
+<!-- ══════ COMPARISON ══════ -->
+<section class="section" id="comparison">
+<h2>Guideline Comparison</h2>
+<p class="subtitle">AHA/ACC 2025 vs Endocrine Society 2025 vs BIHS 2023/2024 vs JAMA Internal Medicine 2026 review.</p>
+
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>AHA/ACC 2025</th>
+<th>Endocrine Society 2025</th>
+<th>BIHS 2023/2024</th>
+<th>JAMA IM Review</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Who to screen</strong></td>
+<td>Targeted — resistant HTN, hypokalemia, OSA, adrenal mass, family history of early-onset HTN, stroke &lt;40 (Class 1); stage 2 HTN (Class 2b)</td>
+<td>All individuals with hypertension (conditional) — universal case detection</td>
+<td>Pragmatic — raise awareness, standardize local variation; classic Conn only ~1/3</td>
+<td>Focus on individual renin/aldosterone interpretation rather than rigid case-finding triggers</td>
+</tr>
+<tr>
+<td><strong>Primary screen</strong></td>
+<td>PAC + PRA + ARR interpreted together</td>
+<td>PAC + PRA/DRC + ARR, assay-specific</td>
+<td>ARR-based, with practical guidance for local variation</td>
+<td>Individual renin and aldosterone values, not the ARR alone</td>
+</tr>
+<tr>
+<td><strong>ARR cutoff</strong></td>
+<td>Commonly 30; 20 or 40 supported</td>
+<td>&gt;20 (ng/dL:ng/mL/h) or &gt;70 (pmol/L:mU/L) immunoassay; ~25% lower for LC-MS/MS</td>
+<td>ARR-based (aligned with international thresholds)</td>
+<td>Critical of ARR-centric approach — compounds two assays' measurement error</td>
+</tr>
+<tr>
+<td><strong>Confirmatory testing</strong></td>
+<td>Recommended — IV saline suppression or oral salt-loading</td>
+<td>Recommended as part of the standard pathway</td>
+<td>Recommended as part of the diagnostic algorithm</td>
+<td>Role uncertain; high false-negative rates</td>
+</tr>
+<tr>
+<td><strong>Subtyping</strong></td>
+<td>AVS if surgery desired</td>
+<td>CT <em>plus</em> AVS before deciding surgical vs medical</td>
+<td>AVS as per algorithm</td>
+<td>AVS generally pursued regardless of CT findings, given frequent CT–AVS discordance</td>
+</tr>
+<tr>
+<td><strong>When to skip AVS</strong></td>
+<td>Not explicitly stated</td>
+<td>&lt;35 y with marked PA, hypokalemia, &gt;1 cm unilateral adenoma on CT</td>
+<td>Per algorithm</td>
+<td>Not interested in / not a candidate for surgery; only mildly positive ARR</td>
+</tr>
+<tr>
+<td><strong>Imaging</strong></td>
+<td>CT obtained even if medical therapy planned, to exclude large mass</td>
+<td>CT as part of subtyping</td>
+<td>CT as part of algorithm</td>
+<td>CT cannot determine functional activity</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="alert alert-info">
+<strong>📌 Reading the table:</strong> The four sources are not in direct opposition — they represent a spectrum. AHA/ACC is the most resource-conscious; Endocrine Society is the most inclusive; BIHS provides a pragmatic UK-focused standard; the JAMA review is the most skeptical of algorithmic reliance on the ARR and suppression testing. All agree on the fundamentals: <strong>suppressed renin is the hallmark</strong>, and <strong>CT alone cannot lateralize</strong>.
+</div>
+
+<h3>Points of Universal Agreement</h3>
+<div class="card">
+<ul style="font-size:13.5px;">
+<li><strong>Suppressed renin is the hallmark</strong> of PA — whether measured as PRA ≤1 ng/mL/h or DRC ≤8.2 mU/L</li>
+<li><strong>Hypokalemia is not required</strong> for the diagnosis, and correcting it before testing is essential</li>
+<li><strong>Cross-sectional imaging cannot determine functional activity</strong> — CT cannot distinguish a functioning adenoma from a nonfunctioning incidentaloma</li>
+<li><strong>AVS is required before surgery</strong> in most patients, given frequent CT–AVS discordance</li>
+<li><strong>Adrenal imaging must be obtained even if medical therapy is planned</strong>, to exclude malignancy</li>
+<li><strong>Lateralization determines treatment</strong> — unilateral → adrenalectomy; bilateral → MRA</li>
+<li><strong>PA is an independent cardiovascular risk factor</strong> — not just a BP issue</li>
+</ul>
+</div>
+</section>
+
+<!-- ══════ REFERENCES ══════ -->
+<section class="section" id="references">
+<h2>References</h2>
+<p class="subtitle">Primary sources underpinning this reference.</p>
+
+<ol class="ref-list">
+<li>
+<strong>2025 AHA/ACC/AANP/AAPA/ABC/ACCP/ACPM/AGS/AMA/ASPC/NMA/PCNA/SGIM Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.</strong><br>
+Jones DW, Ferdinand KC, Taler SJ, et al. <em>Journal of the American College of Cardiology.</em> 2025;86(18):1567-1678. doi:10.1016/j.jacc.2025.05.007
+</li>
+<li>
+<strong>Primary Aldosteronism: An Endocrine Society Clinical Practice Guideline.</strong><br>
+Adler GK, Stowasser M, Correa RR, et al. <em>The Journal of Clinical Endocrinology and Metabolism.</em> 2025;110(9):2453-2495. doi:10.1210/clinem/dgaf284
+</li>
+<li>
+<strong>Diagnosis and management of primary hyperaldosteronism in patients with hypertension: a practical approach endorsed by the British and Irish Hypertension Society.</strong><br>
+Faconti L, Kulkarni S, Delles C, et al. <em>Journal of Human Hypertension.</em> 2024;38(1):8-18. doi:10.1038/s41371-023-00875-1
+</li>
+<li>
+<strong>Primary Aldosteronism.</strong><br>
+Marogi EP, Dubrofsky L, Weber RJ. <em>JAMA Internal Medicine.</em> 2026;:2853614. doi:10.1001/jamainternmed.2026.4155
+</li>
+<li>
+<strong>Updates in the 2025 AHA/ACC Hypertension Guideline.</strong><br>
+Brown C, Clark D, Jones DW. <em>Current Hypertension Reports.</em> 2026;28(1):19. doi:10.1007/s11906-026-01372-9
+</li>
+<li>
+<strong>Impact of the 2025 Endocrine Society Clinical Practice Guideline on the Diagnosis and Management of Primary Aldosteronism for the Clinical Laboratory.</strong><br>
+Sawyer NK, Glendenning P, Schlaich MP, Hooper AJ, Bell DA. <em>Pathology.</em> 2026;58(5):501-506. doi:10.1016/j.pathol.2026.04.003
+</li>
+<li>
+<strong>International Expert Consensus Statement: Percutaneous Transluminal Renal Denervation for the Treatment of Resistant Hypertension.</strong><br>
+Schlaich MP, Schmieder RE, Bakris G, et al. <em>Journal of the American College of Cardiology.</em> 2013;62(22):2031-45. doi:10.1016/j.jacc.2013.08.1616
+</li>
+<li>
+<strong>Hypertension.</strong> Elias Hanna. <em>Practical Cardiovascular Medicine 2e.</em> 2022.
+</li>
+<li>
+<strong>Use of Risk Assessment to Guide Decision-Making for Blood Pressure Management in the Primary Prevention of Cardiovascular Disease: A Scientific Statement From the American Heart Association and American College of Cardiology.</strong><br>
+Khan SS, Lloyd-Jones DM, Abdalla M, et al. <em>Journal of the American College of Cardiology.</em> 2025;86(18):1539-1559. doi:10.1016/j.jacc.2025.08.001
+</li>
+</ol>
+
+<div class="alert alert-info" style="margin-top:20px;">
+<strong>Content provenance.</strong> Screening criteria, biochemical thresholds, confirmatory testing recommendations, subtyping guidance, and treatment pathways are drawn from the four key sources above. AVS procedural details, numeric SI/LI/CSI thresholds, MRA dosing considerations, drug-hold durations, sampling specifics, unit conversion factors, and the detailed workup of other secondary causes are <strong>standard clinical practice / background context</strong> and are marked as such where they appear — they were not all specified in the retrieved sources.
+</div>
+
+<div class="alert alert-warn">
+<strong>⚠️ Final caution.</strong> All ARR cutoffs are assay- and laboratory-specific. The values used in the calculators follow published guideline values, but your local laboratory may validate different cutoffs for its platform. Confirm before acting on any calculated result.
+</div>
+</section>
+
+</main>
+</div>
+
+<script>
+/* ═══════════ NAVIGATION ═══════════ */
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(link.dataset.section).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+/* ═══════════ TABS ═══════════ */
+document.querySelectorAll('.tabs').forEach(group => {
+  const tabs = group.querySelectorAll('.tab');
+  const parent = group.parentElement;
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      parent.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById(tab.dataset.tab);
+      if (target) target.classList.add('active');
+    });
+  });
+});
+
+/* ═══════════ ARR CALCULATOR ═══════════ */
+const ARR_MODES = {
+  ia_ng: {
+    aldoLabel: 'Aldosterone (ng/dL)', aldoHint: 'Immunoassay threshold: ≥10 ng/dL',
+    renLabel: 'Renin — PRA (ng/mL/h)', renHint: 'Suppressed: <1 ng/mL/h',
+    aldoUnit: 'ng/dL', renUnit: 'ng/mL/h',
+    arrCutoff: 20, arrText: '>20 (Endocrine Society); 30 commonly used (AHA/ACC); 20–40 supported',
+    aldoThresh: 10, aldoThreshText: '≥10 ng/dL',
+    renSuppressed: v => v < 1, renSuppText: 'PRA <1 ng/mL/h',
+    formula: (a, r) => a / r
+  },
+  ia_pmol: {
+    aldoLabel: 'Aldosterone (pmol/L)', aldoHint: 'Immunoassay threshold: ≥277 pmol/L',
+    renLabel: 'Renin — DRC (mU/L)', renHint: 'Suppressed: ≤8.2 mU/L',
+    aldoUnit: 'pmol/L', renUnit: 'mU/L',
+    arrCutoff: 70, arrText: '>70 (pmol/L : mU/L, immunoassay)',
+    aldoThresh: 277, aldoThreshText: '≥277 pmol/L',
+    renSuppressed: v => v <= 8.2, renSuppText: 'DRC ≤8.2 mU/L',
+    formula: (a, r) => a / r
+  },
+  ms_ng: {
+    aldoLabel: 'Aldosterone (ng/dL)', aldoHint: 'LC-MS/MS threshold: ≥7.5 ng/dL',
+    renLabel: 'Renin — PRA (ng/mL/h)', renHint: 'Suppressed: <1 ng/mL/h',
+    aldoUnit: 'ng/dL', renUnit: 'ng/mL/h',
+    arrCutoff: 15, arrText: '~15 (≈25% lower than immunoassay cutoff of 20)',
+    aldoThresh: 7.5, aldoThreshText: '≥7.5 ng/dL',
+    renSuppressed: v => v < 1, renSuppText: 'PRA <1 ng/mL/h',
+    formula: (a, r) => a / r
+  },
+  ms_pmol: {
+    aldoLabel: 'Aldosterone (pmol/L)', aldoHint: 'LC-MS/MS threshold: ≥208 pmol/L',
+    renLabel: 'Renin — DRC (mU/L)', renHint: 'Suppressed: ≤8.2 mU/L',
+    aldoUnit: 'pmol/L', renUnit: 'mU/L',
+    arrCutoff: 52, arrText: '~52 (≈25% lower than immunoassay cutoff of 70)',
+    aldoThresh: 208, aldoThreshText: '≥208 pmol/L',
+    renSuppressed: v => v <= 8.2, renSuppText: 'DRC ≤8.2 mU/L',
+    formula: (a, r) => a / r
+  }
+};
+
+function updateARRFields() {
+  const m = ARR_MODES[document.getElementById('arrMode').value];
+  document.getElementById('aldoLabel').textContent = m.aldoLabel;
+  document.getElementById('aldoHint').textContent = m.aldoHint;
+  document.getElementById('renLabel').textContent = m.renLabel;
+  document.getElementById('renHint').textContent = m.renHint;
+  document.getElementById('arrResult').classList.remove('show');
+}
+
+function resetARR() {
+  document.getElementById('aldoVal').value = '';
+  document.getElementById('renVal').value = '';
+  document.getElementById('arrResult').classList.remove('show');
+}
+
+function calcARR() {
+  const key = document.getElementById('arrMode').value;
+  const m = ARR_MODES[key];
+  const a = parseFloat(document.getElementById('aldoVal').value);
+  const r = parseFloat(document.getElementById('renVal').value);
+  const box = document.getElementById('arrResult');
+
+  if (isNaN(a) || isNaN(r)) {
+    box.className = 'result show indeterminate';
+    box.innerHTML = '<div class="result-head">Enter both values</div><p style="font-size:13px;">Please provide both an aldosterone and a renin value.</p>';
+    return;
+  }
+  if (r <= 0) {
+    box.className = 'result show indeterminate';
+    box.innerHTML = '<div class="result-head">Invalid renin value</div><p style="font-size:13px;">Renin must be greater than zero to compute a ratio. A value of zero implies complete suppression — interpret qualitatively with your laboratory.</p>';
+    return;
+  }
+
+  const arr = m.formula(a, r);
+  const renSupp = m.renSuppressed(r);
+  const aldoHigh = a >= m.aldoThresh;
+  const arrHigh = arr >= m.arrCutoff;
+
+  let cls, head, verdict;
+  if (renSupp && aldoHigh && arrHigh) {
+    cls = 'positive';
+    head = '🟥 Screen Positive — all three criteria met';
+    verdict = 'Suppressed renin, elevated aldosterone, and ARR at or above cutoff. Proceed to confirmation / referral to a hypertension specialist or endocrinologist.';
+  } else if (arrHigh && (renSupp || aldoHigh)) {
+    cls = 'indeterminate';
+    head = '🟨 Indeterminate — partial criteria met';
+    verdict = 'The ARR is at or above cutoff but not all biochemical criteria align. Optimize pre-test conditions (normalize potassium, liberal sodium, morning seated draw) and repeat. Consider medication substitution if suspicion remains high.';
+  } else if (renSupp && !aldoHigh) {
+    cls = 'indeterminate';
+    head = '🟨 Suppressed renin with low aldosterone';
+    verdict = 'This pattern suggests low-renin hypertension rather than classic PA. Consider other explanations — volume overload, high sodium intake, licorice, or a low-renin essential hypertension phenotype.';
+  } else {
+    cls = 'negative';
+    head = '🟩 Screen Negative';
+    verdict = 'Biochemical criteria for PA are not met. If clinical suspicion remains high — particularly if potassium was low at sampling — correct potassium and repeat testing.';
+  }
+
+  let conv = '';
+  if (key === 'ia_ng' || key === 'ms_ng') {
+    conv = `≈ ${(a * 27.74).toFixed(1)} pmol/L aldosterone · ≈ ${(r * 8.2).toFixed(1)} mU/L DRC`;
+  } else {
+    conv = `≈ ${(a / 27.74).toFixed(1)} ng/dL aldosterone · ≈ ${(r / 8.2).toFixed(2)} ng/mL/h PRA`;
+  }
+
+  box.className = 'result show ' + cls;
+  box.innerHTML = `
+    <div class="result-head">${head}</div>
+    <div class="metric-row"><span class="k">Aldosterone</span><span class="v">${a} ${m.aldoUnit} ${aldoHigh ? '▲' : ''}</span></div>
+    <div class="metric-row"><span class="k">Renin</span><span class="v">${r} ${m.renUnit} ${renSupp ? '▼ suppressed' : ''}</span></div>
+    <div class="metric-row"><span class="k">ARR</span><span class="v" style="font-size:15px;">${arr.toFixed(1)}</span></div>
+    <div class="metric-row"><span class="k">ARR cutoff used</span><span class="v">${m.arrCutoff} — ${arrHigh ? 'met' : 'not met'}</span></div>
+    <div class="metric-row"><span class="k">Aldosterone threshold</span><span class="v">${m.aldoThreshText} — ${aldoHigh ? 'met' : 'not met'}</span></div>
+    <div class="metric-row"><span class="k">Renin threshold</span><span class="v">${m.renSuppText} — ${renSupp ? 'met' : 'not met'}</span></div>
+    <div class="metric-row"><span class="k">Unit conversion</span><span class="v" style="font-weight:400;color:var(--text-muted);">${conv}</span></div>
+    <div style="margin-top:12px;font-size:13px;line-height:1.55;">${verdict}</div>
+    <div style="margin-top:12px;font-size:11.5px;color:var(--text-muted);font-style:italic;">
+      Cutoff reference: ${m.arrText}. Screening only — confirmation and subtyping required before any treatment decision.
+    </div>
+  `;
+}
+
+/* ═══════════ AVS CALCULATOR ═══════════ */
+function resetAVS() {
+  ['pCort','pAldo','rCort','rAldo','lCort','lAldo'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('avsResult').classList.remove('show');
+}
+
+function calcAVS() {
+  const pCort = parseFloat(document.getElementById('pCort').value);
+  const pAldo = parseFloat(document.getElementById('pAldo').value);
+  const rCort = parseFloat(document.getElementById('rCort').value);
+  const rAldo = parseFloat(document.getElementById('rAldo').value);
+  const lCort = parseFloat(document.getElementById('lCort').value);
+  const lAldo = parseFloat(document.getElementById('lAldo').value);
+  const stim = document.getElementById('acthStim').value === 'stim';
+  const box = document.getElementById('avsResult');
+
+  if ([pCort, rCort, lCort, rAldo, lAldo].some(v => isNaN(v))) {
+    box.className = 'result show indeterminate';
+    box.innerHTML = '<div class="result-head">Incomplete input</div><p style="font-size:13px;">Please provide peripheral cortisol, both adrenal vein cortisol values, and both adrenal vein aldosterone values. Peripheral aldosterone is optional (needed only for CSI).</p>';
+    return;
+  }
+  if (pCort <= 0) {
+    box.className = 'result show indeterminate';
+    box.innerHTML = '<div class="result-head">Invalid peripheral cortisol</div><p style="font-size:13px;">Peripheral cortisol must be greater than zero.</p>';
+    return;
+  }
+
+  const siR = rCort / pCort;
+  const siL = lCort / pCort;
+  const siThreshold = stim ? 3 : 2;
+  const cannulatedR = siR >= siThreshold;
+  const cannulatedL = siL >= siThreshold;
+
+  const acrR = rAldo / rCort;
+  const acrL = lAldo / lCort;
+
+  let li, domSide, nonDomACR, domACR;
+  if (acrR >= acrL) {
+    domSide = 'Right'; li = acrR / acrL; domACR = acrR; nonDomACR = acrL;
+  } else {
+    domSide = 'Left'; li = acrL / acrR; domACR = acrL; nonDomACR = acrR;
+  }
+
+  const liThreshold = stim ? 2 : 4;
+  let lateralVerdict;
+  if (li >= liThreshold) {
+    lateralVerdict = `Lateralizes to the <strong>${domSide}</strong> adrenal gland — consistent with <strong>unilateral aldosterone excess</strong>. Unilateral laparoscopic adrenalectomy would be the surgical option.`;
+  } else if (li >= 2) {
+    lateralVerdict = `Intermediate lateralization (LI ${li.toFixed(2)}). Below the ${stim ? 'ACTH-stimulated' : 'unstimulated'} threshold of ${liThreshold}. This is an <strong>indeterminate</strong> result — bilateral disease is possible, and clinical correlation with imaging and biochemistry is required.`;
+  } else {
+    lateralVerdict = `No meaningful lateralization (LI ${li.toFixed(2)}). This pattern is consistent with <strong>bilateral disease</strong> — medical therapy with an MRA would be the expected approach.`;
+  }
+
+  let csiText = '';
+  let csiVal = null;
+  if (!isNaN(pAldo) && pCort > 0) {
+    csiVal = nonDomACR / (pAldo / pCort);
+    csiText = `<div class="metric-row"><span class="k">Contralateral Suppression Index</span><span class="v">${csiVal.toFixed(2)} ${csiVal < 1 ? '▼ suppressed' : ''}</span></div>`;
+  }
+
+  let cls = 'indeterminate';
+  if (!cannulatedR || !cannulatedL) cls = 'indeterminate';
+  else if (li >= liThreshold) cls = 'positive';
+  else cls = 'negative';
+
+  const cannText = `Right SI ${siR.toFixed(2)} ${cannulatedR ? '✔' : '✘'} · Left SI ${siL.toFixed(2)} ${cannulatedL ? '✔' : '✘'}`;
+
+  let cannNote = '';
+  if (!cannulatedR || !cannulatedL) {
+    cannNote = `<div class="alert alert-danger" style="margin-top:12px;font-size:12.5px;">
+      <strong>⚠️ Cannulation failure.</strong> At least one adrenal vein sample did not meet the selectivity threshold (${siThreshold}). Results from a non-selective sample are unreliable — the A/C ratio will be falsely low on the failed side. Consider repeat AVS with ACTH stimulation or referral to a higher-volume center.
+    </div>`;
+  }
+
+  box.className = 'result show ' + cls;
+  box.innerHTML = `
+    <div class="result-head">${cls === 'positive' ? '🟥 Lateralizes — Unilateral Disease' : cls === 'negative' ? '🟩 No Lateralization — Bilateral Pattern' : '🟨 Indeterminate / Verify Cannulation'}</div>
+    <div class="metric-row"><span class="k">Protocol</span><span class="v">${stim ? 'ACTH-stimulated' : 'Unstimulated'}</span></div>
+    <div class="metric-row"><span class="k">Selectivity (threshold ≥${siThreshold})</span><span class="v">${cannText}</span></div>
+    <div class="metric-row"><span class="k">A/C ratio — Right</span><span class="v">${acrR.toFixed(2)}</span></div>
+    <div class="metric-row"><span class="k">A/C ratio — Left</span><span class="v">${acrL.toFixed(2)}</span></div>
+    <div class="metric-row"><span class="k">Lateralization Index (threshold ≥${liThreshold})</span><span class="v" style="font-size:15px;">${li.toFixed(2)}</span></div>
+    <div class="metric-row"><span class="k">Dominant side</span><span class="v">${domSide}</span></div>
+    ${csiText}
+    <div style="margin-top:12px;font-size:13px;line-height:1.55;">${lateralVerdict}</div>
+    ${csiVal !== null ? `<div style="margin-top:8px;font-size:12.5px;color:var(--text-muted);">CSI ${csiVal < 1 ? '<strong style="color:var(--green);">below 1</strong> — supports suppression of the contralateral gland and unilateral disease.' : '<strong>at or above 1</strong> — does not demonstrate contralateral suppression.'}</div>` : ''}
+    ${cannNote}
+    <div style="margin-top:12px;font-size:11.5px;color:var(--text-muted);font-style:italic;">
+      Thresholds are protocol-dependent and vary by center, assay, and whether ACTH stimulation is used. Always interpret alongside your institution's validated cutoffs and the full imaging and biochemical picture.
+    </div>
+  `;
+}
+
+/* ═══════════ UNIT CONVERTER (NEW) ═══════════ */
+// Base conversion factors relative to canonical units:
+// Aldosterone canonical: ng/dL
+// Renin canonical (PRA): ng/mL/h
+// Renin canonical (DRC): mU/L
+
+const ALDO_TO_NG_DL = {
+  ng_dL: 1,
+  pmol_L: 1 / 27.74,   // pmol/L → ng/dL
+  ng_L: 0.1,            // ng/L → ng/dL (ng/L = pg/mL)
+  pg_mL: 0.1            // pg/mL = ng/L
+};
+
+const RENIN_TO_PRA_HR = {
+  pra_hr: 1,                    // ng/mL/h (canonical)
+  pra_s: 3600,                  // ng/mL/s → ng/mL/h (×3600)
+  pra_Lmin: 0.06,               // ng/L/min → ng/mL/h (÷16.67)
+  pra_Ls: 3.6,                  // ng/L/s → ng/mL/h (÷0.2778)
+  drc_mU: 0.122,                // mU/L → approx ng/mL/h (approximate only!)
+  drc_ngL: 0.122                // ng/L DRC → approx ng/mL/h
+};
+
+const RENIN_TO_DRC_MU = {
+  pra_hr: 8.2,                  // ng/mL/h → approx mU/L
+  pra_s: 8.2 * 3600,            // ng/mL/s → approx mU/L
+  pra_Lmin: 8.2 * 0.06,         // ng/L/min → approx mU/L
+  pra_Ls: 8.2 * 3.6,            // ng/L/s → approx mU/L
+  drc_mU: 1,                    // mU/L
+  drc_ngL: 1                    // ng/L (numerically same as mU/L)
+};
+
+function convertAll() {
+  const aldoVal = parseFloat(document.getElementById('convAldoVal').value);
+  const aldoUnit = document.getElementById('convAldoUnit').value;
+  const renVal = parseFloat(document.getElementById('convRenVal').value);
+  const renUnit = document.getElementById('convRenUnit').value;
+  const out = document.getElementById('convOutput');
+
+  if (isNaN(aldoVal) && isNaN(renVal)) {
+    out.innerHTML = '<p style="font-size:13px;color:var(--text-muted);">Enter values above to see conversions.</p>';
+    return;
+  }
+
+  let html = '';
+
+  // Aldosterone conversions
+  if (!isNaN(aldoVal)) {
+    const aldoNgDL = aldoVal * ALDO_TO_NG_DL[aldoUnit];
+    const aldoPmolL = aldoNgDL * 27.74;
+    const aldoNgL = aldoNgDL * 10;
+
+    html += `<h4 style="color:var(--cyan);margin-top:0;">Aldosterone</h4>`;
+    html += `<div class="conv-grid">`;
+    html += convCell('ng/dL (US)', aldoNgDL.toFixed(2), 'var(--cyan)');
+    html += convCell('pmol/L (SI)', aldoPmolL.toFixed(1), 'var(--accent-2)');
+    html += convCell('ng/L (= pg/mL)', aldoNgL.toFixed(2), 'var(--green)');
+    html += `</div>`;
+  }
+
+  // Renin conversions
+  if (!isNaN(renVal)) {
+    const praHr = renVal * RENIN_TO_PRA_HR[renUnit];
+    const praS = praHr / 3600;
+    const praLmin = praHr * 16.67;
+    const praLs = praHr * 0.2778;
+    const drcMU = renVal * RENIN_TO_DRC_MU[renUnit];
+
+    html += `<h4 style="color:var(--cyan);margin-top:20px;">Renin</h4>`;
+    html += `<div class="conv-grid">`;
+    html += convCell('PRA ng/mL/h (US)', praHr.toFixed(3), 'var(--cyan)');
+    html += convCell('PRA ng/mL/s (CA)', praS.toFixed(6), 'var(--amber)');
+    html += convCell('PRA ng/L/min', praLmin.toFixed(2), 'var(--green)');
+    html += convCell('PRA ng/L/s (CA)', praLs.toFixed(3), 'var(--amber)');
+    html += convCell('DRC mU/L (UK/EU) ≈', drcMU.toFixed(2), 'var(--accent-2)');
+    html += `</div>`;
+    html += `<p style="font-size:11.5px;color:var(--text-muted);font-style:italic;margin-top:8px;">⚠️ DRC values marked "≈" are approximate — DRC and PRA are different analytes and the conversion depends on angiotensinogen substrate concentration. Never use an approximate DRC value for a clinical ARR cutoff.</p>`;
+  }
+
+  // ARR computations across systems
+  if (!isNaN(aldoVal) && !isNaN(renVal)) {
+    const aldoNgDL = aldoVal * ALDO_TO_NG_DL[aldoUnit];
+    const aldoPmolL = aldoNgDL * 27.74;
+    const praHr = renVal * RENIN_TO_PRA_HR[renUnit];
+    const drcMU = renVal * RENIN_TO_DRC_MU[renUnit];
+
+    const arrUS_IA = praHr > 0 ? aldoNgDL / praHr : NaN;
+    const arrSI_IA = drcMU > 0 ? aldoPmolL / drcMU : NaN;
+    const arrCA = (praHr / 3600) > 0 ? aldoPmolL / (praHr / 3600) : NaN;
+
+    html += `<h4 style="color:var(--accent);margin-top:20px;">ARR in each unit system</h4>`;
+    html += `<div class="conv-grid">`;
+    html += convCell('US (ng/dL : ng/mL/h)', isFinite(arrUS_IA) ? arrUS_IA.toFixed(1) : '—', 'var(--cyan)');
+    html += convCell('SI (pmol/L : mU/L)', isFinite(arrSI_IA) ? arrSI_IA.toFixed(1) : '—', 'var(--accent-2)');
+    html += convCell('Canada (pmol/L : ng/mL/s)', isFinite(arrCA) ? arrCA.toFixed(0) : '—', 'var(--amber)');
+    html += `</div>`;
+
+    // Interpretation hints
+    html += `<div style="margin-top:14px;font-size:12.5px;line-height:1.6;">`;
+    html += `<strong>Interpretation hints:</strong><br>`;
+    html += `• US immunoassay cutoff: <strong>&gt;20</strong> (Endocrine Society) or <strong>&gt;30</strong> (AHA/ACC common) — your value: <strong>${isFinite(arrUS_IA) ? arrUS_IA.toFixed(1) : '—'}</strong><br>`;
+    html += `• SI immunoassay cutoff: <strong>&gt;70</strong> — your value: <strong>${isFinite(arrSI_IA) ? arrSI_IA.toFixed(1) : '—'}</strong>`;
+    if (isFinite(arrUS_IA) && isFinite(arrSI_IA)) {
+      const usPos = arrUS_IA >= 20;
+      const siPos = arrSI_IA >= 70;
+      html += `<br><br>`;
+      if (usPos === siPos) {
+        html += `<span style="color:var(--green);font-weight:700;">✅ Consistent interpretation:</span> Both unit systems agree — the result is ${usPos ? 'POSITIVE' : 'NEGATIVE'} for PA by screening criteria.`;
+      } else {
+        html += `<span style="color:var(--red);font-weight:700;">⚠️ Discordant interpretation!</span> Check that your renin unit is PRA (activity) vs DRC (concentration) — this is the most common source of discrepancy.`;
+      }
+    }
+    html += `</div>`;
+  }
+
+  out.innerHTML = html;
+}
+
+function convCell(label, value, color) {
+  return `<div class="conv-cell">
+    <div class="label">${label}</div>
+    <div class="value" style="color:${color};">${value}</div>
+  </div>`;
+}
+
+/* ═══════════ INIT ═══════════ */
+updateARRFields();
+
+/* ═══════════ DEEP LINKING ═══════════ */
+function handleHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const link = document.querySelector(`.nav-link[data-section="${hash}"]`);
+    if (link) link.click();
+  }
+}
+window.addEventListener('hashchange', handleHash);
+handleHash();
+</script>
+
+</body>
+</html>
